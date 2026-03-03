@@ -68,7 +68,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### 4.2 Modelo de Negócio — Top Usados
 
-**Resumo da Discussão:** Eduardo detalhou o portal Top Usados, um agregador de anúncios veiculares online. O portal é posicionado como o 6º portal de veículos no Brasil (concorrentes: Web Motors/Santander, iCarros/Itaú, ZBR/C6, Mobiauto/Banco PAN, OLX). A estratégia de longo prazo é preparar a empresa em 2 anos para venda ou rodada de investimento com fundos (ex: Redhe, Juster).
+**Resumo da Discussão:** Eduardo detalhou o portal Top Usados, um agregador de anúncios veiculares online. O portal é posicionado como o 6º portal de veículos no Brasil (concorrentes: Web Motors/Santander, iCarros/Itaú, Usados Br/C6, Mobiauto/Banco PAN, OLX). A estratégia de longo prazo é preparar a empresa em 2 anos para venda ou rodada de investimento com fundos (ex: Redhe, Juster).
 
 **Fontes de Receita Identificadas:**
 1. **AdSense** — Receita publicitária (já operante)
@@ -98,7 +98,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 | :------------- | :--------------- | :---------------- | :-------------------------- | :---------------------- |
 | Web Motors     | Santander        | ~20 milhões       | A partir de R$39            | Elitizado, B2B          |
 | iCarros        | Itaú             | —                 | —                           | —                       |
-| ZBR            | C6 (negociação)  | ~3 milhões        | R$99 a R$149                | Popular, crescente      |
+| Usados Br      | C6 (negociação)  | ~3 milhões        | R$99 a R$149                | Popular, crescente      |
 | Mobiauto       | Banco PAN        | —                 | R$49 a R$99                 | 30 dias (não vitalício) |
 | OLX            | —                | —                 | —                           | Generalista, fraude     |
 | **Top Usados** | **Independente** | **Em lançamento** | **Gratuito (fase inicial)** | **Multi-segmento**      |
