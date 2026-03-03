@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata Encontro 01 — Eduardo | Live Consultoria</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --accent-glow: rgba(0, 232, 0, 0.15);
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --text-dim: #8899aa;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --warning: #ffa502;
+            --danger: #ff4757;
+            --info: #3498db;
+            --success: #00e800;
+            --space-sm: 1.5rem;
+            --space-md: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(6, 25, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.8rem 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 35px;
+            opacity: 0.9;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .header-info span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 232, 0, 0.04) 0%, transparent 100%);
+        }
+
+        .hero h1 {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .meta-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+
+        .badge .icon {
+            font-size: 1.1rem;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--accent-glow);
+            color: var(--accent-color);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 232, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: var(--space-sm);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 232, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        .card p,
+        .card li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .card ul li:last-child {
+            border: none;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        td strong {
+            color: var(--text-primary);
+        }
+
+        /* GRIDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        /* KPI */
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 232, 0, 0.3);
+        }
+
+        .stat-card .stat-num {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-card .stat-label {
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* STATUS BADGES */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .status-decision {
+            background: rgba(0, 232, 0, 0.15);
+            color: var(--success);
+        }
+
+        .status-attention {
+            background: rgba(255, 165, 2, 0.15);
+            color: var(--warning);
+        }
+
+        .status-risk {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--danger);
+        }
+
+        .status-info {
+            background: rgba(52, 152, 219, 0.15);
+            color: var(--info);
+        }
+
+        /* ALERTS */
+        .alert {
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background: rgba(255, 165, 2, 0.1);
+            border: 1px solid rgba(255, 165, 2, 0.3);
+        }
+
+        .alert-info {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .alert-success {
+            background: rgba(0, 232, 0, 0.08);
+            border: 1px solid rgba(0, 232, 0, 0.2);
+        }
+
+        .alert .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert .alert-text {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .alert .alert-text strong {
+            color: var(--text-primary);
+        }
+
+        /* DELIBERATION CARDS */
+        .delib-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .delib-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .delib-card .delib-summary {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .delib-card .decision-box {
+            background: rgba(0, 232, 0, 0.06);
+            border: 1px solid rgba(0, 232, 0, 0.15);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .delib-card .decision-box strong {
+            color: var(--accent-color);
+        }
+
+        .delib-card .decision-box p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        footer .dev-credit {
+            opacity: 0.4;
+            font-style: italic;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 100px 0 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria">
+            <div class="header-info">
+                <div><span>03 de Março de 2026</span></div>
+                <div>Ata — Encontro 01</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero fade-in">
+        <h1>Encontro 01: Onboarding & Diagnóstico</h1>
+        <p class="subtitle">Ata de Governança — Primeiro encontro presencial de consultoria com Eduardo. Mapeamento do
+            modelo de negócio dos portais Top Usados e Broker Digital, definição de público-alvo e estrutura de
+            contratação.</p>
+        <div class="meta-badges">
+            <div class="badge"><span class="icon">📅</span> 03/03/2026</div>
+            <div class="badge"><span class="icon">🕐</span> 16h00 • ~2h</div>
+            <div class="badge"><span class="icon">📍</span> Sede Live Consultoria</div>
+            <div class="badge"><span class="icon">👥</span> 4 participantes</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- KPIs -->
+        <section class="fade-in">
+            <div class="grid-4">
+                <div class="stat-card">
+                    <div class="stat-num">08</div>
+                    <div class="stat-label">Pautas Discutidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">15</div>
+                    <div class="stat-label">Ações Definidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Portais Mapeados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">7</div>
+                    <div class="stat-label">Alertas de Atenção</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. PARTICIPANTES -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">1</span> Participantes e Hierarquia</div>
+            <p class="section-desc">Lista de presença e estrutura de autoridade mapeadas.</p>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo / Função</th>
+                            <th>Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Luiz Portal</strong></td>
+                            <td>Sócio-Diretor, Live Consultoria</td>
+                            <td>Decisor — Consultoria</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cléber Donato</strong></td>
+                            <td>Sócio-CTO, Live Consultoria (AIOS)</td>
+                            <td>Decisor — Tecnologia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eduardo</strong></td>
+                            <td>Sócio-Investidor, Top Usados / Broker Digital</td>
+                            <td>Decisor — Cliente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Filho do Eduardo</strong></td>
+                            <td>Publicidade e Propaganda</td>
+                            <td>Participante</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2. MODELO DE NEGÓCIO — TOP USADOS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">2</span> Modelo de Negócio — Top Usados</div>
+            <p class="section-desc">Portal de classificados automotivos com estratégia de saída em 2 anos.</p>
+
+            <div class="delib-card">
+                <h3><span class="status status-decision">✅ Deliberado</span> Estratégia e Posicionamento</h3>
+                <p class="delib-summary">O Top Usados é o <strong>6º portal de veículos do Brasil</strong>, posicionado
+                    como independente (sem banco controlador). Estratégia de operação gratuita por 1-2 anos para
+                    construir base de usuários, com objetivo de atingir <strong>3 milhões de acessos mensais</strong>
+                    para posterior venda ou rodada de investimento.</p>
+                <div class="decision-box">
+                    <strong>🎯 Decisão Final</strong>
+                    <p>Modelagem formal será realizada pela Live. Monetização via anúncios pagos após massa crítica.
+                        Objetivo final: preparar empresa em 24 meses para venda ou captação.</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3><i class="fa-solid fa-money-bill-trend-up"></i> Fontes de Receita</h3>
+                    <ul>
+                        <li><strong>AdSense</strong> — Receita publicitária (já operante)</li>
+                        <li><strong>Anúncios Pagos</strong> — Planos por visibilidade (bronze/prata/destaque)</li>
+                        <li><strong>Patrocínios</strong> — Parceiros e marcas do ecossistema</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-layer-group"></i> Segmentos do Portal</h3>
+                    <ul>
+                        <li>🚗 Veículos usados (principal)</li>
+                        <li>🆕 Veículos novos</li>
+                        <li>🏍️ Motos</li>
+                        <li>🏎️ Clássicos / Colecionadores</li>
+                        <li>🚛 Pesados (caminhões)</li>
+                        <li>🔑 Aluguel de veículos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fa-solid fa-chart-column"></i> Benchmark — Concorrentes Diretos</h3>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Portal</th>
+                                <th>Banco/Dono</th>
+                                <th>Acessos/Mês</th>
+                                <th>Preço Anúncio</th>
+                                <th>Modelo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Web Motors</strong></td>
+                                <td>Santander → Carsales (3.4B)</td>
+                                <td>~20 milhões</td>
+                                <td>A partir de R$39</td>
+                                <td>Elitizado, B2B</td>
+                            </tr>
+                            <tr>
+                                <td><strong>iCarros</strong></td>
+                                <td>Itaú</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ZBR</strong></td>
+                                <td>C6 (negociação)</td>
+                                <td>~3 milhões</td>
+                                <td>R$99 a R$149</td>
+                                <td>Popular, crescente</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MobAlto</strong></td>
+                                <td>Banco PAN</td>
+                                <td>—</td>
+                                <td>R$49 a R$99</td>
+                                <td>30 dias (não vitalício)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OLX</strong></td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>Generalista, fraude</td>
+                            </tr>
+                            <tr style="background: rgba(0,232,0,0.05);">
+                                <td><strong style="color: var(--accent-color);">Top Usados</strong></td>
+                                <td>Independente</td>
+                                <td>Em lançamento</td>
+                                <td>Gratuito (fase 1)</td>
+                                <td>Multi-segmento</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BROKER DIGITAL -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">3</span> Broker Digital — Portal Imobiliário</div>
+            <p class="section-desc">Plataforma 95% concluída com parceria MyBroker e 500+ imóveis para lançamento.</p>
+
+            <div class="delib-card">
+                <h3><span class="status status-info">🔵 Em Andamento</span> Parceria MyBroker</h3>
+                <p class="delib-summary">Jéssica (gerente do Guilherme/MyBroker) deu <strong>carta branca</strong> para
+                    anunciar 500+ imóveis. O portal cobre lançamentos, compra, venda, aluguel e temporada. Volume de
+                    negócios potencialmente maior que veículos pelos valores envolvidos.</p>
+                <div class="decision-box">
+                    <strong>🎯 Decisão Final</strong>
+                    <p>Mesmo gestor operacional gerenciará Top Usados e Broker Digital (mesmo modelo de negócio). Escopo
+                        incluído na consultoria.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fa-solid fa-handshake"></i> Contatos Estratégicos</h3>
+                <ul>
+                    <li><strong>Guilherme (MyBroker)</strong> — Parceiro principal, 500+ imóveis, carta branca via
+                        Jéssica</li>
+                    <li><strong>Ricardo Martins Broca</strong> — Ex-corretor bem relacionado, sem vínculo com
+                        imobiliária</li>
+                    <li><strong>Roosevelt (Lopes)</strong> — 1º em vendas da América Latina, conexões no agro</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. LOCU -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">4</span> Projeto Locu (lkoo.com)</div>
+            <p class="section-desc">Marketplace tipo eBay com funcionalidade de leilão — projeto pessoal do Eduardo.</p>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-text">
+                    <strong>Fora do escopo desta consultoria.</strong> Eduardo definiu que a Locu é um projeto separado,
+                    diferente do Top Usados/Broker Digital. Requer assessoria independente. Descrito como "o projeto da
+                    vida" — potencial unicórnio segundo o cliente.
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PÚBLICO-ALVO E CANAIS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">5</span> Público-Alvo e Canais (ICP)</div>
+            <p class="section-desc">Mapeamento preliminar de públicos e canais por segmento.</p>
+
+            <div class="delib-card">
+                <h3><span class="status status-decision">✅ Deliberado</span> Estratégia Multi-Canal "Modelo Globo"</h3>
+                <p class="delib-summary">Luiz enfatizou que o Top Usados atende <strong>múltiplos públicos
+                        distintos</strong> que exigem canais, linguagem e conteúdo diferentes — modelo Globo/SporTV.
+                    Cada público será tratado individualmente com canais dedicados.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>🚗 Compradores</h3>
+                    <ul>
+                        <li>Usados de baixo custo</li>
+                        <li>Alto padrão / luxo</li>
+                        <li>Colecionadores (clássicos)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🏢 B2B</h3>
+                    <ul>
+                        <li>Lojistas / revendedores</li>
+                        <li>Locadoras (PJ)</li>
+                        <li>Construtoras e imobiliárias</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>👤 Vendedores</h3>
+                    <ul>
+                        <li>Pessoa física vendendo veículo</li>
+                        <li>Motoristas Uber / aplicativo</li>
+                        <li>Despachantes (parceria)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div class="alert-text">
+                    <strong>LinkedIn para alto padrão:</strong> Leads custam 3-4x mais que Instagram, mas são
+                    hiperqualificados. Para carros de R$200k+, o público está no LinkedIn, não no Instagram.
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. GESTOR OPERACIONAL -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">6</span> Vaga — Gestor Operacional (Partner Track)</div>
+            <p class="section-desc">Trilha de crescimento do novo gestor até sócio da empresa.</p>
+
+            <div class="grid-3">
+                <div class="card" style="border-top: 3px solid var(--success); text-align: center;">
+                    <h3 style="color: var(--success);">🟢 ENTRY</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">Meses 0 — 6</p>
+                    <p style="font-size: 1.8rem; font-weight: 700; margin: 0.5rem 0;">R$ 5.000</p>
+                    <p style="font-size: 0.8rem;">Onboarding • KPIs • Qualificação</p>
+                </div>
+                <div class="card" style="border-top: 3px solid var(--info); text-align: center;">
+                    <h3 style="color: var(--info);">🔵 GROWTH</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">Meses 6 — 18</p>
+                    <p style="font-size: 1.8rem; font-weight: 700; margin: 0.5rem 0;">Fixo + Variável</p>
+                    <p style="font-size: 0.8rem;">Crescimento • Liderança • Metas</p>
+                </div>
+                <div class="card" style="border-top: 3px solid #9b59b6; text-align: center;">
+                    <h3 style="color: #9b59b6;">🟣 PARTNER</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">Mês 18+</p>
+                    <p style="font-size: 1.8rem; font-weight: 700; margin: 0.5rem 0;">Equity 2-3%</p>
+                    <p style="font-size: 0.8rem;">Drag-along • Tag-along • Vesting</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3><i class="fa-solid fa-file-contract"></i> Cláusulas Contratuais</h3>
+                    <ul>
+                        <li><strong>3 contratos</strong> sucessivos (Entry → Growth → Partner)</li>
+                        <li>Drag-along e Tag-along</li>
+                        <li>Direito de recompra pelo investidor</li>
+                        <li>Valor de saída pré-estabelecido</li>
+                        <li>Advogada: <strong>Dra. Viviane</strong> (direito societário)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-user-check"></i> Currículo Recebido (Indicação)</h3>
+                    <ul>
+                        <li><strong>Fabíula Oliveira</strong>, 44 anos</li>
+                        <li>Coord. Atendimento — Vapt Vupt</li>
+                        <li>Secretaria de Estado de Administração</li>
+                        <li>Psicologia Organizacional / Gestão de Pessoas</li>
+                        <li>Pretensão: ~R$5.000 ✅</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ERP E AUDITABILIDADE -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">7</span> ERP e Auditabilidade</div>
+            <p class="section-desc">Necessidade de sistema auditável desde o início para viabilizar venda futura.</p>
+
+            <div class="delib-card">
+                <h3><span class="status status-attention">⚡ Crítico</span> Histórico Auditável</h3>
+                <p class="delib-summary">Para due diligence em futura venda da empresa, investidores exigem histórico
+                    completo desde o início. "Se eu tenho 4 anos de empresa e só 2 anos de registro, são 2 anos de
+                    empresa" — argumento irrefutável de Luiz. Meios de pagamento via plataforma externa (Mercado Pago)
+                    para não ter responsabilidade com dados financeiros do usuário.</p>
+                <div class="decision-box">
+                    <strong>🎯 Decisão Final</strong>
+                    <p>Curadoria de ERP adequado para startup digital será feita pela Live. Registro auditável deve
+                        começar imediatamente. Estrutura de custos atual é simples (tráfego pago + funcionários) —
+                        momento ideal para implantação.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PLANO DE AÇÃO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">8</span> Plano de Ação</div>
+            <p class="section-desc">15 ações definidas com responsáveis e prazos.</p>
+
+            <div class="card" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ação</th>
+                            <th>Responsável</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Enviar dados CNPJs e estrutura contábil</td>
+                            <td><strong>Eduardo</strong></td>
+                            <td>04/03</td>
+                            <td><span class="status status-attention">⏳ Aguardando</span></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Criar grupo WhatsApp do projeto</td>
+                            <td><strong>Cléber</strong></td>
+                            <td>04/03</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Incluir Prof. Alexandre (programador) no grupo</td>
+                            <td><strong>Eduardo</strong></td>
+                            <td>04/03</td>
+                            <td><span class="status status-info">🔵 Após grupo</span></td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Modelagem formal Business Model Canvas</td>
+                            <td><strong>Luiz + Cléber</strong></td>
+                            <td>Encontro 2</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Mapeamento ICP por segmento</td>
+                            <td><strong>Luiz Portal</strong></td>
+                            <td>Sem. 3-4</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>Benchmark completo dos 5 concorrentes</td>
+                            <td><strong>Live + IA</strong></td>
+                            <td>Sem. 2-3</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Mapear fluxos operacionais por serviço</td>
+                            <td><strong>Cléber + Alexandre</strong></td>
+                            <td>Sem. 2-3</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Curadoria de ERP para startup</td>
+                            <td><strong>Live</strong></td>
+                            <td>Enc. 2-3</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>Publicar vaga Gestor Operacional</td>
+                            <td><strong>Cléber + IA</strong></td>
+                            <td>Sem. 2</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Avaliar currículo Fabíula Oliveira</td>
+                            <td><strong>IA + Cléber</strong></td>
+                            <td>04/03</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Planejamento 12 meses com metas rastreáveis</td>
+                            <td><strong>Luiz</strong></td>
+                            <td>Enc. 2-3</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Formalizar fontes de receita</td>
+                            <td><strong>Eduardo + Luiz</strong></td>
+                            <td>Enc. 3</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Cadastrar Top Usados no Reclame Aqui</td>
+                            <td><strong>Eduardo/Gestor</strong></td>
+                            <td>Sem. 4</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Criar slogan para Top Usados</td>
+                            <td><strong>Live + Eduardo</strong></td>
+                            <td>Enc. 2</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Pesquisa com usuários/vendedores</td>
+                            <td><strong>Live (terceirizada)</strong></td>
+                            <td>Mês 2</td>
+                            <td><span class="status status-info">🔵 A iniciar</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 9. PONTOS DE ATENÇÃO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">9</span> Pontos de Atenção</div>
+            <p class="section-desc">Riscos e incertezas identificados que requerem acompanhamento.</p>
+
+            <div class="grid-2">
+                <div class="card" style="border-left: 3px solid var(--warning);">
+                    <h3 style="color: var(--warning);"><i class="fa-solid fa-triangle-exclamation"></i> Operacional</h3>
+                    <ul>
+                        <li><strong>Locu fora do escopo</strong> — Formalizar separação</li>
+                        <li><strong>Sócios-programadores</strong> — Litígio quando Eduardo e Marcelo assumiram</li>
+                        <li><strong>Múltiplos CNPJs</strong> — Mapear qual usar para contrato</li>
+                        <li><strong>APIs de locadoras</strong> — Não permitem integração não-autorizada</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--danger);">
+                    <h3 style="color: var(--danger);"><i class="fa-solid fa-shield-halved"></i> Estratégico</h3>
+                    <ul>
+                        <li><strong>Burn rate 1-2 anos</strong> — Operação gratuita precisa de projeção financeira</li>
+                        <li><strong>LGPD</strong> — Portal com dados pessoais (CPF, documentos)</li>
+                        <li><strong>Subsídios Startup</strong> — Pesquisar Google ($350k) e fundo perdido</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. IDEIAS FUTURAS (ESTACIONAMENTO) -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">10</span> Estacionamento — Ideias para o Futuro</div>
+            <p class="section-desc">Oportunidades e diferenciais levantados durante a reunião para exploração futura.
+            </p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3><i class="fa-solid fa-camera"></i> Experiência</h3>
+                    <ul>
+                        <li>IA para avaliação de fotos</li>
+                        <li>Máscara/guia para enquadramento</li>
+                        <li>NPS do portal</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-star"></i> Parcerias</h3>
+                    <ul>
+                        <li>Lojas credenciadas c/ selo oficial</li>
+                        <li>Despachantes de confiança</li>
+                        <li>Influenciadores como loja</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-rocket"></i> Expansão</h3>
+                    <ul>
+                        <li>Carros importados via Paraguai</li>
+                        <li>Estética automotiva (parcerias)</li>
+                        <li>Proteção veicular (Provec, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live" style="height: 30px; opacity: 0.5; margin-bottom: 0.5rem;">
+        <p>© 2026 Live Consultoria. Todos os direitos reservados.</p>
+        <p class="dev-credit">Desenvolvido por Cléber Donato • Protocolo AIOS V6.0</p>
+    </footer>
+
+    <!-- FADE-IN OBSERVER -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>
