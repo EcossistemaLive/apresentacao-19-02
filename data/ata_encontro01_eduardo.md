@@ -113,7 +113,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 **Contatos e Parceiros Mencionados:**
 - Guilherme (MyBroker) — parceiro principal, relação via Jéssica (gerente)
-- Ricardo Martins Broca — ex-corretor bem relacionado, potencial parceiro
+- Ricardo Martins - Broker — ex-corretor bem relacionado, potencial parceiro
 - Roosevelt (Lopes) — primeiro em vendas da América Latina, bem relacionado com agronegócio
 
 **DECISÃO FINAL:** Broker Digital será gerenciado pelo mesmo gestor operacional do Top Usados, por ser o mesmo modelo de negócio. Volume de negócios é potencialmente maior que o de veículos devido aos valores envolvidos. A consultoria cobrirá este portal dentro do mesmo escopo.
@@ -130,18 +130,35 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### 4.5 Público-Alvo e Canais (ICP)
 
-**Resumo da Discussão:** Luiz enfatizou a necessidade crítica de mapear cada público separado. O Top Usados atende múltiplos públicos completamente distintos que exigem canais, linguagem e conteúdo diferentes. Foram identificados:
+**Resumo da Discussão:** Luiz enfatizou a necessidade crítica de mapear cada público separado. Cada portal atende múltiplos públicos completamente distintos que exigem canais, linguagem e conteúdo diferentes.
 
-**Públicos Mapeados (Preliminar):**
-1. Compradores de veículos usados de baixo custo
-2. Compradores de veículos de alto padrão/luxo
-3. Motoristas de Uber/aplicativo (aluguel e compra)
-4. Lojistas/revendedores (B2B)
-5. Colecionadores (clássicos)
-6. Locadoras (pessoa jurídica)
-7. Pessoa física vendendo veículo
-8. Construtoras e imobiliárias (Broker Digital)
-9. Despachantes (potencial parceria)
+**Públicos Mapeados — Top Usados (Veículos):**
+1. Compradores de veículos até R$60 mil (pessoa física)
+2. Compradores de veículos acima de R$60 mil (pessoa física)
+3. Vendedores de veículos até R$60 mil (pessoa física)
+4. Vendedores de veículos acima de R$60 mil (pessoa física)
+5. Lojistas/revendedores de veículos (B2B)
+6. Motoristas Uber/aplicativo (aluguel e compra)
+7. Pessoa física que aluga carro
+8. Empresas que alugam carros / Locadoras (PJ)
+9. Colecionadores (clássicos)
+10. Despachantes (potencial parceria)
+
+**Públicos Mapeados — Broker Digital (Imóveis):**
+1. Compradores PF de imóveis até R$300 mil
+2. Compradores PF de imóveis de R$300 mil a R$600 mil
+3. Compradores PF de imóveis de R$600 mil a R$1,2 milhão
+4. Compradores PF de imóveis acima de R$1,2 milhão
+5. Vendedores PF de imóveis até R$300 mil
+6. Vendedores PF de imóveis de R$300 mil a R$600 mil
+7. Vendedores PF de imóveis de R$600 mil a R$1,2 milhão
+8. Vendedores PF de imóveis acima de R$1,2 milhão
+9. Aluguel PF até R$5 mil
+10. Aluguel PF acima de R$5 mil
+11. Imobiliárias (B2B)
+12. Construtoras e incorporadoras
+13. Construtores pessoa física (pequenos prédios e casas para venda)
+14. Corretores independentes
 
 **Canais Discutidos:**
 - Instagram (múltiplos canais por público, modelo Globo/SporTV)
@@ -172,7 +189,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 - Advogada recomendada: Dra. Viviane (direito societário)
 
 **Currículo Recebido (indicação):**
-- **Fabíula Oliveira**, 44 anos
+- **Fabíola Oliveira**, 44 anos
 - Coordenadora de Atendimento no Vapt Vupt
 - Secretaria de Estado de Administração
 - Formação: Psicologia Organizacional, Gestão de Pessoas
@@ -185,7 +202,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### 4.7 Necessidade de ERP e Auditabilidade
 
-**Resumo da Discussão:** Luiz argumentou que para o objetivo de venda da empresa em 2 anos, é mandatório ter um ERP com histórico auditável desde o início. Atualmente a estrutura de custos é simples (tráfego pago e funcionários), sem ERP formal. Eduardo tem ERP apenas nas outras empresas (Helsingen, etc.). Luiz enfatizou que na due diligence, investidores vão exigir histórico completo — e ter apenas parte do histórico desvaloriza a empresa.
+**Resumo da Discussão:** Luiz argumentou que para o objetivo de venda da empresa em 2 anos, é mandatório ter um ERP com histórico auditável desde o início. Atualmente a estrutura de custos é simples (tráfego pago e funcionários), sem ERP formal. Eduardo tem ERP apenas nas outras empresas (Welhelmsen, etc.). Luiz enfatizou que na due diligence, investidores vão exigir histórico completo — e ter apenas parte do histórico desvaloriza a empresa.
 
 **DECISÃO FINAL:** Será feita curadoria de ERP adequado para startup digital. O registro histórico auditável deve começar imediatamente. A consultoria vai avaliar qual ERP aguenta crescimento e processos bem definidos. Meios de pagamento de anúncios serão via plataforma externa (Mercado Pago) para evitar responsabilidade com dados financeiros.
 
@@ -193,7 +210,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### 4.8 Estrutura e Contexto do Ecossistema Eduardo
 
-**Resumo da Discussão:** Eduardo revelou seu histórico empresarial extenso — nunca trabalhou para terceiros (desde 17 anos), sempre indústria e marcas próprias. Fundou a marca de lubrificantes Helsingen em 2006 (fábrica de 4400m² em Goiás), vendeu 50% por R$900.000 em 2011, recomprou a marca em 2017 e relançou. Helsingen é hoje sua empresa principal, operando em múltiplos estados. O segundo sócio investidor nos portais é Marcelo.
+**Resumo da Discussão:** Eduardo revelou seu histórico empresarial extenso — nunca trabalhou para terceiros (desde 17 anos), sempre indústria e marcas próprias. Fundou a marca de lubrificantes Welhelmsen em 2006 (fábrica de 4400m² em Goiás), vendeu 50% por R$900.000 em 2011, recomprou a marca em 2017 e relançou. Welhelmsen é hoje sua empresa principal, operando em múltiplos estados. O segundo sócio investidor nos portais é Marcelo.
 
 **Parceiros de Negócio Já Existentes:**
 - Programador principal (morou fora, especialista em segurança de banco de dados — Prof. Alexandre)
@@ -218,7 +235,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 | 07   | Mapear fluxos operacionais por serviço (venda, aluguel, PJ, PF)       | Documentar como cada produto funciona no portal           | Cléber + Prof. Alexandre    | Semana 2-3   | Respostas do programador          | A iniciar |
 | 08   | Curadoria de ERP para startup digital                                 | Auditabilidade e histórico desde o início                 | Live Consultoria            | Encontro 2-3 | Definição de orçamento            | A iniciar |
 | 09   | Publicar vaga de Gestor Operacional                                   | Iniciar processo seletivo em paralelo                     | Cléber + IA                 | Semana 2     | Aprovação final do Eduardo        | A iniciar |
-| 10   | Avaliar currículo Fabíula Oliveira                                    | Primeira indicação recebida                               | IA + Cléber                 | 04/03/2026   | —                                 | A iniciar |
+| 10   | Avaliar currículo Fabíola Oliveira                                    | Primeira indicação recebida                               | IA + Cléber                 | 04/03/2026   | —                                 | A iniciar |
 | 11   | Planejamento de 12 meses com metas rastreáveis                        | Faturamento por canal/público com investimento necessário | Luiz Portal                 | Encontro 2-3 | Modelagem concluída               | A iniciar |
 | 12   | Estabelecer fontes de receita formais (AdSense, anúncios, patrocínio) | Clareza financeira para investidores                      | Eduardo + Luiz              | Encontro 3   | Modelagem de negócio              | A iniciar |
 | 13   | Cadastrar Top Usados no Reclame Aqui                                  | Reputação e canal de feedback                             | Eduardo/Gestor              | Semana 4     | Dados da empresa                  | A iniciar |
@@ -241,7 +258,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 6. **Seguro/LGPD:** O portal lida com dados pessoais (CPF, documentos para validação anti-fraude). Precisa aderência à LGPD e certificados de segurança confirmados.
 
-7. **Candidatura espontânea recebida (Fabíula):** Currículo recebido por indicação com pretensão de R$5.000 — alinhado ao orçamento. Avaliar antes de publicar a vaga formalmente.
+7. **Candidatura espontânea recebida (Fabíola):** Currículo recebido por indicação com pretensão de R$5.000 — alinhado ao orçamento. Avaliar antes de publicar a vaga formalmente.
 
 8. **Subsídios para startups (Google $350k, fundos públicos):** Luiz mencionou créditos do Google ($350k) e fundo perdido do governo para startups. Pesquisar elegibilidade e requisitos.
 
@@ -253,7 +270,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 - **Lojas credenciadas com selo oficial:** Diferenciação premium (vídeo mensal, layout customizado, suporte dedicado)
 - **Cadastro de despachantes de confiança:** Serviço agregado ao portal
 - **Cadastro de estética automotiva:** Parcerias com empresas de polimento/preparação
-- **Associações de proteção veicular:** Parcerias com Provec, Dons, etc.
+- **Associações de proteção veicular:** Parcerias com Aprovec, Dons, etc.
 - **Carros importados via Paraguai:** Nicho crescente não atendido pelos portais tradicionais
 - **Influenciadores como loja oficial:** Parceria com perfis de Instagram de automóveis
 - **Site multilíngue:** Requisito para rodada de investimento internacional
