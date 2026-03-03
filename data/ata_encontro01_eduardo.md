@@ -5,7 +5,7 @@
 
 ## 0. SUMÁRIO EXECUTIVO (TL;DR)
 
-Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho, na sede da Live Consultoria, conduzido por Luiz Portal e Cléber Donato. A reunião de onboarding cobriu a apresentação institucional da Live, discussão aprofundada do modelo de negócio dos portais **Top Usados** (veículos) e **Broker Digital** (imóveis), definição de público-alvo e canais, estruturação da vaga de Gestor Operacional com trilha Partner Track, e alinhamento sobre a necessidade de ERP para auditabilidade visando venda futura da empresa. O projeto **Locu** (marketplace/leilão) foi mencionado mas definido como escopo separado.
+Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho, na sede da Live Consultoria, conduzido por Luiz Portal e Cléber Donato. A reunião de onboarding cobriu a apresentação institucional da Live, discussão aprofundada do modelo de negócio dos portais **Top Usados** (veículos) e **Broker Digital** (imóveis), definição de público-alvo e canais, estruturação da vaga de Gestor Operacional com trilha Partner Track, e alinhamento sobre a necessidade de ERP para auditabilidade visando venda futura da empresa. O projeto **Lokkoo** (marketplace/leilão) foi mencionado mas definido como escopo separado.
 
 ---
 
@@ -20,12 +20,12 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### Participantes Presentes
 
-| Nome             | Cargo/Função                                    | Nível Hierárquico     |
-| :--------------- | :---------------------------------------------- | :-------------------- |
-| Luiz Portal      | Sócio-Diretor, Live Consultoria                 | Decisor — Consultoria |
-| Cléber Donato    | Sócio-CTO, Live Consultoria (AIOS)              | Decisor — Tecnologia  |
-| Eduardo          | Sócio-Investidor, Top Usados / Broker Digital   | Decisor — Cliente     |
-| Filho do Eduardo | Envolvido no projeto (Publicidade e Propaganda) | Participante          |
+| Nome          | Cargo/Função                                  | Nível Hierárquico     |
+| :------------ | :-------------------------------------------- | :-------------------- |
+| Luiz Portal   | Sócio-Diretor, Live Consultoria               | Decisor — Consultoria |
+| Cléber Donato | Sócio-CTO, Live Consultoria (AIOS)            | Decisor — Tecnologia  |
+| Eduardo       | Sócio-Investidor, Top Usados / Broker Digital | Decisor — Cliente     |
+| Vitória       | Filha do Eduardo, Publicidade e Propaganda    | Participante          |
 
 ---
 
@@ -34,7 +34,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 - Apresentação institucional da Live Consultoria e metodologia AIOS (sistema operacional de IA)
 - Formalização contratual, cronograma e esclarecimento de dúvidas
 - Coleta de informações pendentes (CNPJs, estrutura societária)
-- Levantamento aprofundado do modelo de negócio (Top Usados, Broker Digital, Locu)
+- Levantamento aprofundado do modelo de negócio (Top Usados, Broker Digital, Lokkoo)
 - Diagnóstico inicial: público-alvo, diferenciais, canais, benchmark de concorrentes
 - Definição da vaga de Gestor Operacional (Partner Track)
 - Alinhamento sobre necessidade de ERP e auditabilidade para futura venda da empresa
@@ -68,7 +68,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ### 4.2 Modelo de Negócio — Top Usados
 
-**Resumo da Discussão:** Eduardo detalhou o portal Top Usados, um agregador de anúncios veiculares online. O portal é posicionado como o 6º portal de veículos no Brasil (concorrentes: Web Motors/Santander, iCarros/Itaú, ZBR/C6, MobAlto/Banco PAN, OLX). A estratégia de longo prazo é preparar a empresa em 2 anos para venda ou rodada de investimento com fundos (ex: Redhe, Juster).
+**Resumo da Discussão:** Eduardo detalhou o portal Top Usados, um agregador de anúncios veiculares online. O portal é posicionado como o 6º portal de veículos no Brasil (concorrentes: Web Motors/Santander, iCarros/Itaú, ZBR/C6, Mobiauto/Banco PAN, OLX). A estratégia de longo prazo é preparar a empresa em 2 anos para venda ou rodada de investimento com fundos (ex: Redhe, Juster).
 
 **Fontes de Receita Identificadas:**
 1. **AdSense** — Receita publicitária (já operante)
@@ -99,7 +99,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 | Web Motors     | Santander        | ~20 milhões       | A partir de R$39            | Elitizado, B2B          |
 | iCarros        | Itaú             | —                 | —                           | —                       |
 | ZBR            | C6 (negociação)  | ~3 milhões        | R$99 a R$149                | Popular, crescente      |
-| MobAlto        | Banco PAN        | —                 | R$49 a R$99                 | 30 dias (não vitalício) |
+| Mobiauto       | Banco PAN        | —                 | R$49 a R$99                 | 30 dias (não vitalício) |
 | OLX            | —                | —                 | —                           | Generalista, fraude     |
 | **Top Usados** | **Independente** | **Em lançamento** | **Gratuito (fase inicial)** | **Multi-segmento**      |
 
@@ -120,11 +120,11 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ---
 
-### 4.4 Projeto Locu (Marketplace + Leilão)
+### 4.4 Projeto Lokkoo (Marketplace + Leilão)
 
-**Resumo da Discussão:** Eduardo mencionou o projeto Locu (lkoo.com), um marketplace tipo eBay com funcionalidade de leilão (compre agora ou leilão com preço de reserva). É descrito como "o projeto da vida" de Eduardo — ele é o único proprietário, contratou programadores e criou todo o escopo. O projeto nasceu da frustração com marketplaces (ex: Mercado Livre banindo contas de vendedores de R$15 milhões sem atendimento).
+**Resumo da Discussão:** Eduardo mencionou o projeto Lokkoo (lokkoo.com), um marketplace tipo eBay com funcionalidade de leilão (compre agora ou leilão com preço de reserva). É descrito como "o projeto da vida" de Eduardo — ele é o único proprietário, contratou programadores e criou todo o escopo. O projeto nasceu da frustração com marketplaces (ex: Mercado Livre banindo contas de vendedores de R$15 milhões sem atendimento).
 
-**DECISÃO FINAL:** Locu é um projeto separado e **não faz parte do escopo desta consultoria**. Eduardo quer fechar uma assessoria diferente para este projeto. Luiz reconheceu que é um projeto potencialmente unicórnio mas com escopo completamente diferente.
+**DECISÃO FINAL:** Lokkoo é um projeto separado e **não faz parte do escopo desta consultoria**. Eduardo quer fechar uma assessoria diferente para este projeto. Luiz reconheceu que é um projeto potencialmente unicórnio mas com escopo completamente diferente.
 
 ---
 
@@ -229,7 +229,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 
 ## 6. PONTOS DE ATENÇÃO E INCERTEZAS
 
-1. **Locu (lkoo.com) fora do escopo:** Eduardo mencionou diversas vezes o projeto Locu como separado. É necessário formalizar que este projeto terá assessoria independente para evitar confusão de escopo.
+1. **Lokkoo (lokkoo.com) fora do escopo:** Eduardo mencionou diversas vezes o projeto Lokkoo como separado. É necessário formalizar que este projeto terá assessoria independente para evitar confusão de escopo.
 
 2. **Relação societária com sócios-programadores:** Eduardo mencionou que os programadores originais processaram quando ele e Marcelo assumiram a administração. Status jurídico desta situação precisa ser esclarecido.
 
