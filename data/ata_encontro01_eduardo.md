@@ -23,7 +23,7 @@ Primeiro encontro presencial de consultoria com Eduardo (investidor) e seu filho
 | Nome          | Cargo/Função                                  | Nível Hierárquico     |
 | :------------ | :-------------------------------------------- | :-------------------- |
 | Luiz Portal   | Sócio-Diretor, Live Consultoria               | Decisor — Consultoria |
-| Cléber Donato | Sócio-CTO, Live Consultoria (AIOS)            | Decisor — Tecnologia  |
+| Cléber Donato | CAIO, Live Consultoria (AIOS)                 | Decisor — Tecnologia  |
 | Eduardo       | Sócio-Investidor, Top Usados / Broker Digital | Decisor — Cliente     |
 | Vitória       | Filha do Eduardo, Publicidade e Propaganda    | Participante          |
 
