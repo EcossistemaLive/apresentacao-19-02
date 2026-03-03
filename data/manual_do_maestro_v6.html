@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual do Maestro - Operação de Alta Performance V6.0 | Live Consultoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* --- Atmosfera (Backgrounds) --- */
+            --live-deep: #06192a;
+
+            /* --- Superfícies (Refractive Glass) --- */
+            --live-glass: rgba(10, 36, 61, 0.70);
+            --live-glass-hover: rgba(15, 45, 75, 0.85);
+            --glass-blur: blur(16px) saturate(180%);
+
+            /* --- Luz & Ação --- */
+            --live-accent: #00e800;
+            --live-accent-dim: rgba(0, 232, 0, 0.15);
+            --kinetic-gradient: linear-gradient(90deg, #ffffff 0%, #cccccc 50%, #00e800 100%);
+
+            /* --- Física de Animação (Micro-Springs) --- */
+            --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-fluid: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+            /* --- Bordas Inteligentes --- */
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(0, 232, 0, 0.4);
+
+            --text-main: #e2e8f0;
+            --text-light: #ffffff;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--live-deep);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* HEADER */
+        header {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, var(--live-accent-dim) 0%, transparent 70%);
+            position: relative;
+            padding: 80px 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 7vw, 80px);
+            background: var(--kinetic-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            transition: tracking 0.3s ease;
+        }
+
+        .badge {
+            background: var(--live-accent);
+            color: var(--live-deep);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px var(--live-accent-dim);
+        }
+
+        /* NAVEGAÇÃO LATERAL */
+        .nav-dots {
+            position: fixed;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        @media (hover: hover) {
+            .nav-dots a {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: transparent;
+                border: 2px solid var(--live-accent);
+                transition: 0.4s var(--spring-bounce);
+            }
+
+            .nav-dots a:hover {
+                background: var(--live-accent);
+                transform: scale(1.4);
+                box-shadow: 0 0 10px var(--live-accent);
+            }
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s var(--ease-fluid);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            color: var(--text-light);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h2 i {
+            color: var(--live-accent);
+            font-size: 0.8em;
+        }
+
+        .module-intro {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(18px, 2vw, 22px);
+            color: #cbd5e0;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--live-accent);
+            padding-left: 25px;
+            font-style: italic;
+        }
+
+        /* CARDS TÉCNICOS */
+        .tech-card {
+            background: var(--live-glass);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: clamp(25px, 5vw, 50px);
+            margin-bottom: 40px;
+            transition: all 0.4s var(--spring-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (hover: hover) {
+            .tech-card:hover {
+                border-color: var(--live-accent);
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .step-title {
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--live-accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .instruction-block {
+            background: rgba(0, 0, 0, 0.25);
+            padding: clamp(20px, 3vw, 30px);
+            border-radius: 16px;
+            margin-top: 25px;
+            border-left: 3px solid var(--live-accent-dim);
+        }
+
+        .instruction-block h4 {
+            color: #a2ffae;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* LISTAS TÉCNICAS */
+        ul.check-list {
+            list-style: none;
+        }
+
+        ul.check-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        ul.check-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--live-accent);
+            font-size: 20px;
+        }
+
+        .why-tag {
+            display: inline-block;
+            background: var(--live-accent-dim);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--live-accent);
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid rgba(0, 232, 0, 0.2);
+        }
+
+        /* IMAGENS */
+        .img-box {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: #04111d;
+            position: relative;
+        }
+
+        .img-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: clamp(250px, 40vh, 450px);
+            transition: 0.8s var(--ease-fluid);
+            filter: brightness(0.9);
+        }
+
+        .img-box:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            background: #030d16;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 25px;
+            transition: transform 0.4s var(--spring-bounce);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .powered-by {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .powered-by a {
+            color: var(--live-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .powered-by a:hover {
+            text-shadow: 0 0 8px var(--live-accent);
+        }
+
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+
+            .tech-card {
+                padding: 30px;
+            }
+
+            .nav-dots {
+                display: none;
+            }
+        }
+
+        /* ANIMAÇÃO DE ENTRADA */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav-dots">
+        <a href="#intro" title="O Maestro"></a>
+        <a href="#modulo1" title="1. Diário"></a>
+        <a href="#modulo2" title="2. Semanal"></a>
+        <a href="#modulo3" title="3. Mensal"></a>
+        <a href="#modulo4" title="4. Liderança"></a>
+        <a href="#modulo5" title="5. RH"></a>
+        <a href="#modulo6" title="6. Inteligência"></a>
+        <a href="#modulo7" title="7. Estoque"></a>
+        <a href="#modulo8" title="8. Financeiro"></a>
+        <a href="#modulo9" title="9. Diplomata"></a>
+    </nav>
+
+    <header id="intro">
+        <div class="container">
+            <span class="badge">Live Consultoria V6.0 | Elite</span>
+            <h1>O MAESTRO DA LOJA</h1>
+            <p class="subtitle" style="font-size: 26px; color: #a0aec0; max-width: 850px; margin: 0 auto;">A fundação de
+                um negócio sólido reside na disciplina tática do seu gestor.</p>
+
+            <div class="img-box" style="max-width: 900px; margin-top: 50px; margin-left: auto; margin-right: auto;">
+                <img src="https://images.unsplash.com/photo-1507679799987-c7377f5da5b2?q=80&w=1200&auto=format&fit=crop"
+                    alt="Estratégia de Negócios e Liderança" loading="lazy"
+                    onerror="this.src='https://via.placeholder.com/1200x450/06192a/00e800?text=Estrategia+Varejo+Live'">
+            </div>
+
+            <p style="font-family: 'Merriweather', serif; font-size: 18px; margin: 30px auto 0; max-width: 700px;">
+                "Pense nestas atribuições como a fundação de uma casa: o cliente não vê a fundação, mas sem ela, as
+                paredes — as vendas e o atendimento — desmoronam."
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- MÓDULO 1: DIÁRIO -->
+        <section id="modulo1">
+            <h2><i class="fa-solid fa-clock"></i> Módulo 1: O Compasso Diário</h2>
+            <p class="module-intro">"O dia a dia é o ensaio geral. Sem afinação rigorosa antes da abertura, o concerto
+                será um desastre."</p>
+
+            <div class="tech-card">
+                <div class="step-title"><span>1. Abertura e Inspeção 5S</span><small>08:00 - 08:30</small></div>
+                <div class="why-tag">FUNDAÇÃO: Padrão de Excelência</div>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Visão Externa:</strong> Observe a vitrina com os olhos do cliente. Vidros limpos e
+                            luzes focadas valorizam o produto em 50%.</li>
+                        <li><strong>Sensos de Ordenação:</strong> Balcão limpo, sem casacos ou chávenas de café. O
+                            balcão é ferramenta de venda.</li>
+                        <li><strong>Check de Infraestrutura:</strong> Teste terminais e sistemas. Não espere a fila
+                            formar para descobrir um erro técnico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="step-title"><span>2. Briefing Matinal</span><small>08:30 - 08:45</small></div>
+                <p>O briefing não é para "dar avisos", é para definir a estratégia de vitória do dia.</p>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Produtos Foco:</strong> Repasse os itens de foco **definidos pela gestão**.</li>
+                        <li><strong>Metas do Dia:</strong> Distribua o objetivo global por cada vendedor de forma clara.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 2: SEMANAL -->
+        <section id="modulo2">
+            <h2><i class="fa-solid fa-calendar-check"></i> Módulo 2: O Ajuste das Velas</h2>
+            <div class="tech-card">
+                <div class="step-title"><span>Visual Merchandising & Vitrina</span></div>
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15595bb530d?q=80&w=1200&auto=format&fit=crop"
+                        alt="Exposição Premium de Utilidades Domésticas" loading="lazy"
+                        onerror="this.src='https://via.placeholder.com/1200x450/06192a/00e800?text=Exposição+Premium+Live'">
+                </div>
+                <div class="why-tag">FUNDAÇÃO: Renovação do Desejo</div>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Troca Semanal:</strong> Altere os cenários toda a segunda-feira. Uma vitrina parada
+                            vira paisagem.</li>
+                        <li><strong>Cross-Merchandising:</strong> Ao expor panelas, coloque tábuas e utensílios ao lado
+                            para aumentar o ticket.</li>
+                        <li><strong>Hierarquia Visual:</strong> Use diferentes alturas para guiar o olhar do cliente.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros módulos permanecem estruturados com os novos cards -->
+        <section id="modulo3">
+            <h2><i class="fa-solid fa-chart-line"></i> Módulo 3: A Colheita e o Plantio</h2>
+            <p class="module-intro">"O fechamento exige precisão analítica para garantir que o físico bata com o
+                financeiro."</p>
+
+            <div class="tech-card">
+                <div class="step-title"><span>Inventário e Resultados</span></div>
+                <div class="why-tag">FUNDAÇÃO: Acuracidade Financeira</div>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Contagem Rotativa:</strong> Coordene a contagem por categorias para evitar furos de
+                            estoque.</li>
+                        <li><strong>Regra PEPS:</strong> Garanta que o estoque antigo saia primeiro.</li>
+                        <li><strong>Relatórios à Diretoria:</strong> Análises de desempenho vs metas (Mínima, Básica e
+                            Master).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo4">
+            <h2><i class="fa-solid fa-user-tie"></i> Módulo 4: Liderança de Elite</h2>
+            <div class="tech-card">
+                <div class="step-title"><span>Postura e Comando</span></div>
+                <div class="why-tag">FUNDAÇÃO: Autoridade e Cultura</div>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Disciplina Inegociável:</strong> Normas mantêm o comando sólido.</li>
+                        <li><strong>Liderança pelo Exemplo:</strong> A equipa é o reflexo do gestor.</li>
+                        <li><strong>Inteligência Emocional:</strong> Calma sob pressão no palco da loja.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos Adicionais Compactados para Elegância -->
+        <section id="modulo5">
+            <h2><i class="fa-solid fa-users-gear"></i> Módulo 5: Gestão Humana</h2>
+            <div class="tech-card">
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Recrutamento:</strong> Checagem de referências é obrigatória.</li>
+                        <li><strong>Onboarding:</strong> Acompanhamento tático do novo talento.</li>
+                        <li><strong>Controle:</strong> Gestão rigorosa de escalas e ponto.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo8">
+            <h2><i class="fa-solid fa-file-invoice-dollar"></i> Módulo 8: Saúde Financeira</h2>
+            <div class="tech-card">
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Fechamento:</strong> Fiscalização diária e reporte imediato.</li>
+                        <li><strong>Notas Fiscais:</strong> Envio imediato para o financeiro.</li>
+                        <li><strong>Rigor:</strong> Controle total de despesas e comprovantes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulo9" style="border-bottom: none;">
+            <h2><i class="fa-solid fa-handshake-angle"></i> Módulo 9: Gestão de Conflitos</h2>
+            <div class="tech-card">
+                <div class="why-tag">FIDELIZAÇÃO: O Valor do Cliente (LTV)</div>
+                <div class="instruction-block">
+                    <ul class="check-list">
+                        <li><strong>Autoridade na Solução:</strong> Assuma a frente em reclamações críticas.</li>
+                        <li><strong>Troca como Oportunidade:</strong> Gere vendas complementares na troca.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-card" style="margin-top: 40px; text-align: center; background: var(--live-accent-dim);">
+                <h3
+                    style="font-family: 'Merriweather', serif; font-style: italic; color: var(--live-accent); font-size: clamp(20px, 3vw, 26px);">
+                    "Dominar a operação de ponta a ponta é o que transforma o chefe de vendas num verdadeiro Gestor de
+                    Negócios."
+                </h3>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria" class="footer-logo">
+            <p style="color: #64748b; font-size: 15px; letter-spacing: 1px;">
+                &copy; 2026 Manual de Operações Gerenciais | Casa Goianita<br>
+                Desenvolvido por <strong>Cléber Donato</strong> - Estrategista Live Consultoria V6.0
+            </p>
+            <div class="powered-by">
+                ₢ Powered by <a href="mailto:cleberdonato@ecossistemalive.com.br">Cléber Donato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para animação ao scroll (Intersection Observer)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

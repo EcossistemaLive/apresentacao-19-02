@@ -1,0 +1,57 @@
+name: contract-review-squad
+version: 1.0.0
+description: "Squad especialista em revisão automatizada de contratos legais — extração de cláusulas, análise de riscos, playbook compliance, redlines e relatórios executivos"
+author: gutomec
+license: MIT
+slashPrefix: crs
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+
+components:
+  agents:
+    - clause-extractor.md
+    - risk-flagger.md
+    - playbook-enforcer.md
+    - redline-drafter.md
+    - summary-reporter.md
+  tasks:
+    - extract-clauses.md
+    - flag-risks.md
+    - enforce-playbook.md
+    - draft-redlines.md
+    - generate-review-summary.md
+    - full-contract-review.md
+  workflows:
+    - full-contract-review-workflow.yaml
+    - quick-risk-assessment-workflow.yaml
+  checklists: []
+  templates: []
+  tools: []
+  scripts: []
+
+config:
+  extends: extend
+  coding-standards: config/coding-standards.md
+  tech-stack: config/tech-stack.md
+  source-tree: config/source-tree.md
+
+dependencies:
+  node: []
+  python: []
+  squads: []
+
+mcpTools:
+  required: []
+  optional: []
+
+tags:
+  - legal
+  - contract-review
+  - risk-assessment
+  - compliance
+  - redline
+  - playbook
+  - clause-extraction
+  - corporate-legal

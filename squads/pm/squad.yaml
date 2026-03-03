@@ -1,0 +1,73 @@
+# Squad: PM (Project Management)
+name: pm
+version: 1.0.0
+description: >
+  Squad de Gestão de Projetos responsável por integração com ClickUp,
+  geração de relatórios de status, e acompanhamento de planos de ação
+  (5W2H) extraídos das atas de reunião.
+author: Cleber
+created: 2026-02-16
+updated: 2026-02-16
+
+## Agents
+
+| ID | Name | Role |
+|----|------|------|
+| pm | PM | Project Manager (do squad AIOS padrão) |
+
+## Integrations
+
+### ClickUp
+- **API:** `api.clickup.com/api/v2`
+- **Auth:** Personal Access Token (PAT) via `CLICKUP_API_KEY`
+- **Script existente:** `squads/pm/validate-clickup.js`
+- **Capabilities:** Tasks, Sprints, Workspaces, Members
+
+## Tasks
+
+| ID | Description | Trigger |
+|----|-------------|---------|
+| sync-clickup | Sincronizar tasks entre projeto local e ClickUp | `/pm-sync` |
+| status-report | Gerar relatório de status do projeto | `/pm-status` |
+| track-actions | Extrair e acompanhar planos 5W2H das atas | `/pm-track [ata.md]` |
+| validate-connection | Validar conexão com ClickUp API | `/pm-validate` |
+
+## Workflows
+
+### 1. ClickUp Sync
+```
+1. Validar conexão ClickUp (validate-clickup.js)
+2. Buscar tasks do workspace
+3. Comparar com tasks locais (task.md, project_status.json)
+4. Sincronizar status bidirecional
+```
+
+### 2. Status Report
+```
+1. Ler project_status.json
+2. Consultar tasks no ClickUp (se conectado)
+3. Gerar relatório consolidado (Markdown ou HTML)
+```
+
+### 3. Action Plan Tracking (5W2H)
+```
+1. Receber ata de reunião (output do squad comms)
+2. Extrair tabela 5W2H (Seção 5 da ata)
+3. Criar tasks no ClickUp com responsáveis e prazos
+4. Monitorar status e gerar alertas de prazo
+```
+
+## Dependencies
+- `dotenv`
+- `https` (nativo Node.js)
+- ClickUp API v2
+
+## Config
+- **Env Variables:**
+  - `CLICKUP_API_KEY` (Personal Access Token)
+- **Project Status:** `project_status.json` (raiz do projeto)
+- **Existing Script:** `squads/pm/validate-clickup.js`
+
+## Cross-Squad Integration
+- **← comms:** Recebe atas com plano 5W2H para tracking
+- **→ live-operations:** Pode publicar status no bot Telegram

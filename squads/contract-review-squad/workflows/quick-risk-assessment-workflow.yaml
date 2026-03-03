@@ -1,0 +1,49 @@
+workflow_name: quick_risk_assessment
+description: "Avaliação rápida de riscos de contrato — extração de cláusulas, análise de riscos e sumário executivo sem playbook nem redlines"
+
+agent_sequence:
+  - clause-extractor
+  - risk-flagger
+  - summary-reporter
+
+key_commands:
+  - "*quick-review"
+  - "*assess-contract"
+
+trigger_threshold: 1
+typical_duration: "10-20 minutes"
+
+success_indicators:
+  - "Cláusulas extraídas e estruturadas"
+  - "Riscos identificados e pontuados"
+  - "Sumário executivo com risk score e recomendações"
+
+transitions:
+  clauses_extracted:
+    trigger: "Cláusulas extraídas — extracted-clauses.json gerado"
+    confidence: 0.95
+    greeting_message: "📄 Cláusulas extraídas. Iniciando análise de riscos."
+    next_steps:
+      - command: "*flag-risks"
+        args_template: "--clauses={extracted_clauses_path}"
+        description: "Identificar e pontuar riscos em cada cláusula"
+        priority: 1
+
+  risks_flagged:
+    trigger: "Riscos identificados — risk-report.json gerado"
+    confidence: 0.95
+    greeting_message: "⚠️ Riscos identificados. Gerando sumário executivo."
+    next_steps:
+      - command: "*generate-summary"
+        args_template: "--review_data={review_output_path}"
+        description: "Gerar sumário executivo com risk score e recomendações"
+        priority: 1
+
+  review_complete:
+    trigger: "Sumário executivo gerado — executive-summary.md gerado"
+    confidence: 0.95
+    greeting_message: "📊 Avaliação rápida concluída! Sumário disponível."
+    next_steps:
+      - command: "*create-report"
+        description: "Exportar relatório ou iniciar revisão completa com playbook"
+        priority: 1

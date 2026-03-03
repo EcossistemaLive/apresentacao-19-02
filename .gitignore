@@ -1,0 +1,44 @@
+
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+.env.backup*
+*.key
+*.pem
+*.secret
+
+# Dependencies (AIOS)
+node_modules/
+node_modules
+
+# Build & Logs (AIOS)
+dist/
+build/
+*.log
+logs/
+
+# IDE & OS (AIOS)
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# AIOS Local (AIOS)
+.aios-core/local/
+.claude/settings.local.json
+.aios/install-log.txt
+.aios-backup-*/
+
+# Next.js
+.next/
+
+# Large media files (blocked by GitHub 100MB limit)
+*.mp3
+*.m4a
+*.mp4
+*.wav
+*.avi
+*.mov
+press.pdf

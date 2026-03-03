@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro de Primeira Abordagem — Eduardo | Live Consultoria</title>
+    <meta name="description"
+        content="Roteiro estruturado para primeira abordagem ao cliente Eduardo, com perguntas para coleta de dados do contrato e proposta comercial.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --accent-glow: rgba(0, 232, 0, 0.15);
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --text-dim: #8899aa;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+            --space-sm: 1rem;
+            --warning: #ffa502;
+            --info: #3498db;
+            --success: #00e800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(6, 25, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header .header-info {
+            text-align: right;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        header .header-info span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 8rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero .badges {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .badge strong {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title .num {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            padding-left: 3.2rem;
+            font-size: 0.85rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 232, 0, 0.25);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent-color);
+        }
+
+        /* MESSAGE BUBBLE */
+        .msg-bubble {
+            background: linear-gradient(135deg, rgba(0, 232, 0, 0.08), rgba(0, 232, 0, 0.03));
+            border-left: 3px solid var(--accent-color);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-secondary);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .msg-bubble strong {
+            color: var(--text-primary);
+            font-style: normal;
+        }
+
+        .msg-bubble .emoji {
+            font-style: normal;
+        }
+
+        /* QUESTION LIST */
+        .q-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: q;
+        }
+
+        .q-list li {
+            counter-increment: q;
+            padding: 0.85rem 1rem 0.85rem 3.5rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .q-list li:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .q-list li:last-child {
+            border-bottom: none;
+        }
+
+        .q-list li::before {
+            content: counter(q);
+            position: absolute;
+            left: 0.75rem;
+            top: 0.85rem;
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .q-list li strong {
+            color: var(--text-primary);
+        }
+
+        /* BLOCK LABEL */
+        .block-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 232, 0, 0.1);
+            border: 1px solid rgba(0, 232, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        /* INTRO LINE */
+        .intro-line {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        /* ALERT */
+        .alert {
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .alert-info {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .alert-warning {
+            background: rgba(255, 165, 2, 0.1);
+            border: 1px solid rgba(255, 165, 2, 0.3);
+        }
+
+        .alert .alert-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .alert .alert-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .alert .alert-text strong {
+            color: var(--text-primary);
+        }
+
+        /* CHECKLIST */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0.25rem;
+            top: 0.5rem;
+            font-size: 1rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        footer .dev-credit {
+            opacity: 0.4;
+            font-style: italic;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live Consultoria">
+        <div class="header-info">
+            <div><span>Documento Interno</span></div>
+            <div>Roteiro de Abordagem</div>
+        </div>
+    </header>
+
+    <div class="hero fade-in">
+        <h1>Roteiro — Primeira Abordagem</h1>
+        <p class="subtitle">Script estruturado para contato com Eduardo. Objetivo: coletar os dados formais para geração
+            do contrato e proposta comercial.</p>
+        <div class="badges">
+            <div class="badge"><span>👤</span> Cliente: <strong>Eduardo</strong></div>
+            <div class="badge"><span>📲</span> Canal: <strong>WhatsApp</strong></div>
+            <div class="badge"><span>❓</span> Perguntas: <strong>17</strong></div>
+            <div class="badge"><span>🎯</span> Objetivo: <strong>Dados p/ contrato</strong></div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. MENSAGEM DE ABERTURA -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">1</span> Mensagem de Abertura</div>
+            <p class="section-desc">Primeira mensagem pelo WhatsApp — tom amigável, direto e profissional.</p>
+
+            <div class="msg-bubble">
+                <span class="emoji">Olá Eduardo, tudo bem? 👋</span><br><br>
+                Meu nome é <strong>Cléber Donato</strong>, sou da equipe da <strong>Live Consultoria</strong> do Luiz
+                Portal.<br><br>
+                O Luiz me passou o briefing do seu projeto e estou muito animado com o trabalho que vamos desenvolver
+                juntos! Já estamos com o planejamento inicial estruturado e prontos para começar.<br><br>
+                Para darmos o próximo passo — formalizar a proposta e o contrato — preciso coletar algumas informações
+                suas e da empresa. Posso te enviar as perguntas aqui ou prefere agendar uma call rápida de 15
+                minutos?<br><br>
+                <span class="emoji">Fico no aguardo! 🚀</span>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div class="alert-text">
+                    <strong>Dica:</strong> Se ele preferir call, agende pelo Google Calendar e use as perguntas abaixo
+                    como roteiro da conversa. Se preferir texto, envie bloco a bloco para não sobrecarregar.
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. BLOCO 1 — DADOS DA EMPRESA -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">2</span> Dados da Empresa</div>
+            <p class="section-desc">Informações formais obrigatórias para o contrato de prestação de serviços.</p>
+
+            <div class="card">
+                <div class="block-label">📋 Bloco 1 — Dados Formais</div>
+                <div class="intro-line">"Primeiro, vou precisar de alguns dados formais da empresa para o contrato:"
+                </div>
+                <ol class="q-list">
+                    <li><strong>Qual é a razão social da empresa?</strong></li>
+                    <li><strong>Qual o CNPJ?</strong></li>
+                    <li><strong>Qual o endereço completo da sede?</strong><br>
+                        <span style="color: var(--text-dim); font-size: 0.8rem;">(Rua, número, bairro, cidade, estado,
+                            CEP)</span>
+                    </li>
+                    <li><strong>A empresa já tem nome fantasia definido?</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 3. BLOCO 2 — DADOS DOS SÓCIOS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">3</span> Dados dos Sócios</div>
+            <p class="section-desc">Identificação dos responsáveis que assinarão o contrato.</p>
+
+            <div class="card">
+                <div class="block-label">👥 Bloco 2 — Representantes</div>
+                <div class="intro-line">"Agora preciso dos dados do representante legal que vai assinar o contrato:"
+                </div>
+                <ol class="q-list" style="counter-reset: q 4;">
+                    <li><strong>Qual o seu nome completo?</strong></li>
+                    <li><strong>Qual o seu CPF?</strong></li>
+                    <li><strong>Qual o nome do outro sócio investidor?</strong></li>
+                    <li><strong>Quem será o representante legal que assinará o contrato?</strong><br>
+                        <span style="color: var(--text-dim); font-size: 0.8rem;">(Pode ser você ou o outro sócio)</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 4. BLOCO 3 — SOBRE O NEGÓCIO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">4</span> Sobre o Negócio</div>
+            <p class="section-desc">Contexto para a proposta comercial e planejamento do Encontro 1.</p>
+
+            <div class="card">
+                <div class="block-label">🏢 Bloco 3 — Informações do Negócio</div>
+                <div class="intro-line">"Para eu já começar a preparar o material do primeiro encontro, preciso entender
+                    um pouco mais sobre o negócio:"</div>
+                <ol class="q-list" style="counter-reset: q 8;">
+                    <li><strong>Como funciona a plataforma de vocês?</strong><br>
+                        <span style="color: var(--text-dim); font-size: 0.8rem;">(Marketplace, SaaS, comissão por
+                            venda?)</span>
+                    </li>
+                    <li><strong>Quem são os clientes atuais?</strong><br>
+                        <span style="color: var(--text-dim); font-size: 0.8rem;">(Lojistas, consumidores finais,
+                            empresas?)</span>
+                    </li>
+                    <li><strong>Já possuem faturamento? Se sim, qual a faixa mensal?</strong></li>
+                    <li><strong>Qual a stack tecnológica que os programadores utilizam?</strong></li>
+                    <li><strong>A empresa já tem missão, visão e valores definidos?</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 5. BLOCO 4 — LOGÍSTICA -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">5</span> Logística dos Encontros</div>
+            <p class="section-desc">Definição de agenda e formato para os 6 encontros presenciais.</p>
+
+            <div class="card">
+                <div class="block-label">📅 Bloco 4 — Agenda</div>
+                <div class="intro-line">"Por último, sobre a logística das nossas reuniões:"</div>
+                <ol class="q-list" style="counter-reset: q 13;">
+                    <li><strong>Qual o melhor dia da semana para os encontros presenciais?</strong></li>
+                    <li><strong>Qual o local preferido?</strong><br>
+                        <span style="color: var(--text-dim); font-size: 0.8rem;">(Sede da empresa, escritório do Luiz,
+                            coworking?)</span>
+                    </li>
+                    <li><strong>Todos os sócios poderão participar ou apenas você?</strong></li>
+                    <li><strong>Quando seria uma boa data para o primeiro encontro?</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 6. MENSAGEM DE FECHAMENTO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">6</span> Fechamento</div>
+            <p class="section-desc">Mensagem de encerramento após o cliente responder.</p>
+
+            <div class="msg-bubble">
+                <span class="emoji">Perfeito, Eduardo! 💪</span><br><br>
+                Com essas informações já consigo finalizar a proposta formal e o contrato.<br><br>
+                Vou preparar tudo e te envio para revisão antes do nosso primeiro encontro.<br><br>
+                <span class="emoji">Qualquer dúvida, é só me chamar! 🚀</span>
+            </div>
+        </section>
+
+        <!-- 7. FOLLOW-UP -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">7</span> Follow-up (48h sem resposta)</div>
+            <p class="section-desc">Template para reenvio caso o cliente não responda.</p>
+
+            <div class="msg-bubble" style="border-left-color: var(--warning);">
+                <span class="emoji">Oi Eduardo! 😊</span><br><br>
+                Passando para ver se conseguiu ver minha mensagem anterior.<br><br>
+                Estamos com tudo pronto do nosso lado para iniciar o projeto — só faltam as informações da empresa para
+                formalizarmos o contrato.<br><br>
+                <span class="emoji">Fica à vontade para me responder quando puder! 🚀</span>
+            </div>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⏰</div>
+                <div class="alert-text">
+                    <strong>Timing:</strong> Enviar o follow-up após <strong>48h</strong> sem resposta. Se após mais 48h
+                    ainda não responder, alinhar com Luiz sobre próximo passo (ligar diretamente ou reagendar
+                    abordagem).
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CHECKLIST DE VALIDAÇÃO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">8</span> Checklist de Dados Coletados</div>
+            <p class="section-desc">Use esta lista para validar que todos os dados foram obtidos antes de gerar a
+                proposta.</p>
+
+            <div class="card">
+                <h3>Dados Obrigatórios para Contrato</h3>
+                <ul class="checklist">
+                    <li>Razão social da empresa</li>
+                    <li>CNPJ</li>
+                    <li>Endereço completo (rua, nº, bairro, cidade, UF, CEP)</li>
+                    <li>Nome fantasia</li>
+                    <li>Nome completo do representante legal</li>
+                    <li>CPF do representante legal</li>
+                    <li>Nome do segundo sócio investidor</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Dados para Proposta e Planejamento</h3>
+                <ul class="checklist">
+                    <li>Modelo de negócio (marketplace, SaaS, comissão)</li>
+                    <li>Público-alvo / clientes atuais</li>
+                    <li>Faixa de faturamento mensal</li>
+                    <li>Stack tecnológica</li>
+                    <li>Missão, visão e valores (se existentes)</li>
+                    <li>Dia preferido para encontros</li>
+                    <li>Local preferido para encontros</li>
+                    <li>Participantes confirmados</li>
+                    <li>Data sugerida para o Encontro 1</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live" style="height: 30px; opacity: 0.5; margin-bottom: 0.5rem;">
+        <p>© 2026 Live Consultoria. Todos os direitos reservados.</p>
+        <p class="dev-credit">Documento interno — uso exclusivo da equipe</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

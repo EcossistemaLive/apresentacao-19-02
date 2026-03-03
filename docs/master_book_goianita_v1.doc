@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: 'Times New Roman', serif; font-size: 12pt; line-height: 1.5; margin: 2cm; }
+  h1 { font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 24pt; }
+  h2 { font-size: 14pt; font-weight: bold; margin-top: 18pt; border-bottom: 1px solid #000; padding-bottom: 6pt; }
+  h3 { font-size: 13pt; font-weight: bold; margin-top: 12pt; }
+  p { margin-bottom: 12pt; text-align: justify; }
+  ul { list-style-type: disc; margin-bottom: 12pt; }
+  li { margin-bottom: 6pt; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12pt; }
+  th, td { border: 1px solid #000; padding: 6pt; text-align: left; }
+  th { background-color: #f2f2f2; font-weight: bold; }
+  .header-info { text-align: center; margin-bottom: 36pt; font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="header-info">
+    <p><strong>GRUPO GOIANITA (73 ANOS)</strong></p>
+    <p>Versão: 2026.01 | Status: Documento Confidencial e Normativo</p>
+</div>
+
+<h1>MASTER BOOK: POLÍTICA COMERCIAL E OPERACIONAL</h1>
+
+<h2>TÍTULO I: GOVERNANÇA CORPORATIVA E ESTRATÉGIA</h2>
+
+<h3>1. Estrutura de Poder e Decisão</h3>
+<p>Para garantir que a tradição converse com a inovação, a hierarquia de decisão é absoluta:</p>
+<ul>
+    <li><strong>Comitê Gestor (C-Level):</strong> Único órgão com poder para alterar a Margem de Contribuição Global e aprovar investimentos de Capex (Reformas/Expansão).</li>
+    <li><strong>Curadoria de Produto:</strong> Detém o Poder de Veto sobre a compra de qualquer item que fira a estética ou o padrão de qualidade da marca, independentemente do preço.</li>
+    <li><strong>Gerência de Loja:</strong> Guardiã da execução. Possui autonomia para resolver conflitos de até <strong>R$ 2.000,00</strong> sem acionar a diretoria, visando a satisfação imediata do cliente.</li>
+    <li><strong>Comprador (Buyer):</strong> [NOVO]
+        <ul>
+            <li><strong>Função:</strong> Negociador técnico. Responsável por buscar as melhores condições comerciais (prazo/preço) para os produtos definidos pela Curadoria.</li>
+            <li><strong>Limites:</strong> Não tem autonomia para introduzir novas categorias de produtos sem aval da Curadoria.</li>
+            <li><strong>Meta:</strong> Garantir "Ruptura Zero" nos itens de Curva A e margem média de entrada superior a [X]%.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>2. Ética e Compliance com Fornecedores</h3>
+<ul>
+    <li><strong>Código de Conduta de Compras:</strong> É estritamente proibido aos compradores aceitar presentes, viagens ou benefícios pessoais de fornecedores que excedam o valor simbólico de <strong>R$ 100,00</strong>.</li>
+    <li><strong>Homologação:</strong> Todo novo fornecedor deve assinar o "Termo de Conformidade Goianita", garantindo que não utiliza trabalho escravo, infantil ou madeira ilegal (para linha de móveis/tábuas).</li>
+    <li><strong>Bonificações (Enxoval):</strong> Produtos enviados pela indústria como "bonificação" devem obrigatoriamente dar entrada no estoque com custo zero. É proibida a apropriação desses itens por funcionários.</li>
+</ul>
+
+<h2>TÍTULO II: CANAIS DE VENDA E OMNICHANNEL (O "ESTOQUE ÚNICO")</h2>
+
+<h3>1. Integração Total (Olist)</h3>
+<p>A regra é: <em>"A Loja é o Estoque, o Site é a Vitrine"</em>.</p>
+<ul>
+    <li><strong>Prateleira Infinita:</strong> É dever do vendedor ofertar o item pelo tablet se ele não estiver disponível na prateleira física, mas constar no estoque do CD ou outra filial.</li>
+    <li><strong>Click & Collect (Retirada):</strong> O cliente que compra online e retira na loja é um cliente "Premium". O pacote deve ser entregue em sacola de presente, e o gerente deve ser notificado para tentar um <em>upsell</em> (venda adicional) no momento da retirada.</li>
+</ul>
+
+<h3>2. Segmentação de Clientes (Tabelas de Preço)</h3>
+<ul>
+    <li><strong>Varejo (B2C):</strong> Preço Cheio. Foco em experiência.</li>
+    <li><strong>Goianita PRO (B2B):</strong>
+        <ul>
+            <li><em>Hotéis/Restaurantes:</em> Tabela regressiva por volume. Faturamento no boleto permitido apenas após 3 compras à vista e aprovação de crédito (Serasa Limpo + 3 Referências Comerciais).</li>
+        </ul>
+    </li>
+    <li><strong>Prescritores (Arquitetos/Decoradores):</strong>
+        <ul>
+            <li><em>Reserva Técnica (RT):</em> 5% a 7% de comissão paga mediante Nota Fiscal de Serviço do profissional. É proibido o pagamento "por fora".</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>TÍTULO III: OPERAÇÃO DE LOJA E VISUAL MERCHANDISING (VM)</h2>
+
+<h3>1. Padrão Visual e Atmosfera</h3>
+<p>A loja vende sonhos, não apenas pratos.</p>
+<ul>
+    <li><strong>Regra dos 5 Sentidos:</strong>
+        <ul>
+            <li><em>Visão:</em> Vitrines trocadas a cada 15 dias. Iluminação focada nos itens de luxo (pontos quentes).</li>
+            <li><em>Olfato:</em> A loja deve ter a "Assinatura Olfativa Goianita" (difusor padrão ligado das 09h às 19h).</li>
+            <li><em>Audição:</em> Playlist aprovada pelo Marketing. Proibido rádio comercial ou música estridente.</li>
+        </ul>
+    </li>
+    <li><strong>Mesa Posta:</strong> Obrigatório ter, no mínimo, 2 mesas completas montadas na entrada da loja, trocadas semanalmente (tema: Café da Manhã, Jantar Romântico, Almoço de Domingo).</li>
+</ul>
+
+<h3>2. Prevenção de Perdas e Estoque</h3>
+<ul>
+    <li><strong>Auditoria de Vidros:</strong> A conferência de itens frágeis (taças, cristais) é feita na frente do cliente no ato da venda. O cliente assina o cupom dando aceite na integridade.</li>
+    <li><strong>Inventário Rotativo:</strong> O estoquista deve bipar 10% do estoque (uma categoria por dia) via App Olist.</li>
+    <li><strong>Política de Quebra Interna:</strong> O colaborador que quebrar um item por negligência comprovada (brincadeiras, manuseio incorreto) arcará com 50% do valor de custo. Quebras acidentais entram na conta de "Perdas Operacionais" da loja.</li>
+</ul>
+
+<h2>TÍTULO IV: POLÍTICA COMERCIAL E FINANCEIRA</h2>
+
+<h3>1. Matriz de Descontos e Alçadas</h3>
+<p>O desconto não é direito, é ferramenta de fechamento.</p>
+<ul>
+    <li><strong>Vendedor:</strong> 0% (Usa apenas parcelamento).</li>
+    <li><strong>Gerente:</strong> Até 5% (Para salvar a venda).</li>
+    <li><strong>Diretoria:</strong> Acima de 5% (Apenas para grandes volumes B2B ou queima de estoque).</li>
+</ul>
+
+<h3>2. Regra de "Desconto Ponderado" (Cesta Mista) [NOVO]</h3>
+<p>Para permitir descontos maiores sem ferir a margem, o Gerente pode aplicar até <strong>10%</strong> em um item específico, DESDE QUE o desconto total na cesta do cliente não ultrapasse <strong>5%</strong>.</p>
+<ul>
+    <li><em>Exemplo:</em> Cliente compra um faqueiro de R$ 1.000 (alta margem) e uma batedeira de R$ 500 (baixa margem).
+        <ul>
+            <li>Gerente pode dar 10% no faqueiro (R$ 100).</li>
+            <li>Total da Cesta: R$ 1.500. Desconto R$ 100 = 6.6% (Acima da alçada).</li>
+            <li><em>Correção:</em> Gerente deve negociar para chegar a R$ 75 de desconto total (5% da cesta).</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>3. Comissionamento Estratégico</h3>
+<p>Proteção da Margem Líquida.</p>
+<ul>
+    <li><strong>Venda no PIX/Débito:</strong> Comissão Ouro (3.5%).</li>
+    <li><strong>Venda Parcelada (até 6x):</strong> Comissão Prata (2.5%).</li>
+    <li><strong>Venda Parcelada Longa (10x+):</strong> Comissão Bronze (1.5%).</li>
+</ul>
+
+<h3>4. Programa de Fidelidade e Cashback</h3>
+<ul>
+    <li><strong>Goianita Club:</strong> R$ 1,00 em compras = 1 ponto.</li>
+    <li><strong>Validade:</strong> Pontos expiram em 12 meses.</li>
+    <li><strong>Cashback:</strong> Campanhas sazonais podem gerar voucher de 10% para a próxima compra (validade de 30 dias) para aumentar a recorrência.</li>
+</ul>
+
+<h2>TÍTULO V: ECOSSISTEMA DE SERVIÇOS E PARCERIAS</h2>
+
+<h3>1. Lista de Casamento "Lifestyle"</h3>
+<p>A Goianita opera como um banco digital para os noivos.</p>
+<ul>
+    <li><strong>Créditos:</strong> O casal recebe 100% em créditos. Não há entrega física obrigatória.</li>
+    <li><strong>Marketplace de Serviços:</strong> A venda de Lua de Mel ou Dia da Noiva via lista gera uma receita de Taxa de Conveniência (15%) para a Goianita. A responsabilidade da execução é 100% do parceiro terceiro.</li>
+</ul>
+
+<h3>2. Programa de Embaixadores</h3>
+<ul>
+    <li><strong>Influenciadores:</strong> Pagamento de comissão via Cupom Rastreável apenas sobre vendas faturadas e entregues (pós-período de devolução de 7 dias).</li>
+    <li><strong>Cerimonialistas:</strong> Contrato de parceria comercial. Bônus pago por "Lista Ativa" (lista que atinge R$ 2.000,00 em vendas).</li>
+</ul>
+
+<h2>TÍTULO VI: GESTÃO DE PESSOAS E COMPLIANCE</h2>
+
+<h3>1. Dress Code e Apresentação Pessoal</h3>
+<p>O vendedor Goianita é um consultor de luxo. A imagem pessoal é parte do produto.</p>
+<ul>
+    <li><strong>Uniforme:</strong> Obrigatório, limpo e passado.</li>
+    <li><strong>Calçados:</strong> Fechados, cor neutra (preto/nude), limpos. Proibido tênis esportivo colorido ou chinelos.</li>
+    <li><strong>Cabelo/Barba:</strong> Cabelos penteados/presos. Barba aparada.</li>
+    <li><strong>Maquiagem/Unhas:</strong> Suave e profissional. Unhas limpas e cuidadas (essencial para quem manuseia cristais).</li>
+</ul>
+
+<h3>2. Conduta e Postura</h3>
+<ul>
+    <li><strong>Celular:</strong> Proibido uso de celular pessoal no salão de vendas. O uso para trabalho deve ser feito via tablet da loja.</li>
+    <li><strong>Linguagem:</strong> Formal e acolhedora. Proibido gírias ou gritos no salão.</li>
+    <li><strong>Disponibilidade:</strong> Postura de "Prontidão". Nunca ficar sentado ou escorado em móveis quando houver clientes na loja.</li>
+</ul>
+
+<h3>3. Canal de Ética</h3>
+<ul>
+    <li><strong>Sigilo (LGPD):</strong> É demissão por justa causa o vazamento de dados de clientes (listas de casamento, telefones de celebridades/autoridades) para terceiros.</li>
+    <li><strong>Denúncias:</strong> Qualquer assédio, discriminação ou furto deve ser reportado anonimamente ao Canal de Ética (rh@grupogoianita.com.br).</li>
+</ul>
+
+<h3>4. Protocolo de Atendimento (SAC)</h3>
+<ul>
+    <li><strong>Trocas:</strong> Aceitas em até 30 dias para itens de linha (intactos). Itens de Saldão/Liquidação não têm troca (carimbo na nota: "SEM TROCA").</li>
+    <li><strong>Escalada de Reclamação:</strong>
+        <ol>
+            <li>Vendedor tenta resolver.</li>
+            <li>Gerente assume e leva para ambiente reservado.</li>
+            <li>Se não resolver, abre-se chamado no "Ouvidoria Goianita" com prazo de 48h para resposta da Diretoria.</li>
+        </ol>
+    </li>
+</ul>
+
+<h2>TÍTULO VII: PROCEDIMENTOS OPERACIONAIS PADRÃO (SOPs)</h2>
+
+<h3>1. Abertura de Loja (Checklist Diário - 08:30h)</h3>
+<ul>
+    <li>[ ] <strong>Atmosfera:</strong> Ligar som, ar-condicionado (23ºC) e difusor de aroma.</li>
+    <li>[ ] <strong>VM:</strong> Verificar vitrine (luzes focais) e mesas postas (alinhamento).</li>
+    <li>[ ] <strong>Limpeza:</strong> Conferir chão (sem poeira), vidros e banheiros.</li>
+    <li>[ ] <strong>Sistema:</strong> Ligar caixas, testar máquina de cartão e impressoras.</li>
+    <li>[ ] <strong>Equipe:</strong> Briefing matinal (metas do dia e avisos).</li>
+</ul>
+
+<h3>2. Fechamento de Loja (Checklist Diário - 19:00h)</h3>
+<ul>
+    <li>[ ] <strong>Financeiro:</strong> Sangria de valores, fechamento de lote das máquinas de cartão.</li>
+    <li>[ ] <strong>Segurança:</strong> Trancar estoque de alto valor (H.Stern/Cristais).</li>
+    <li>[ ] <strong>Energia:</strong> Desligar luzes (exceto vitrine noturna e servidor).</li>
+    <li>[ ] <strong>Organização:</strong> Recolher produtos deixados nos balcões ("rescaldo").</li>
+</ul>
+
+<h3>3. Recebimento de Mercadoria</h3>
+<ul>
+    <li>[ ] Conferir Nota Fiscal x Pedido de Compra.</li>
+    <li>[ ] Inspeção de Avarias (abrir caixas aleatórias de frágeis).</li>
+    <li>[ ] Etiquetagem imediata e entrada no sistema WMS/ERP.</li>
+</ul>
+
+<h3>4. Transferência entre Lojas</h3>
+<ul>
+    <li>[ ] Solicitação via sistema.</li>
+    <li>[ ] Conferência dupla (quem envia e quem recebe).
+    <li>[ ] Avaria no transporte entre lojas é responsabilidade da <strong>Loja de Origem</strong> (quem embalou).
+</ul>
+
+<hr>
+
+<h3>ANEXOS OPERACIONAIS (Para Imprimir)</h3>
+<ol>
+    <li>Termo de Conferência de Cristais.</li>
+    <li>Placa de Política de Troca.</li>
+    <li>Checklist Diário de Gerente.</li>
+    <li>Contrato de Embaixador.</li>
+</ol>
+
+<p><em>Esta política revoga todas as disposições anteriores e entra em vigor em 01/02/2026.</em></p>
+
+</body>
+</html>

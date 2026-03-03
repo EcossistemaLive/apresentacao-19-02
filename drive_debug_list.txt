@@ -1,0 +1,41 @@
+LOG DE ARQUIVOS - 18/02/2026, 18:37:10
+
+- [application/vnd.google-apps.folder] reunião 27-01 (ID: 1mrgAsigPH9t2SsgZ5N8Ewqaw1B4vBuA8)
+   ➡️ Entrando na subpasta: reunião 27-01...
+   - [audio/mpeg] -reuniao conselho 27-01.mp3 (ID: 15k4pw5xLFB_o2Iex2XLsaAqOpCqGntjy)
+- [application/vnd.google-apps.folder] Olist (ID: 1-Oo5ED0wg6zrdvtjJkYA46NgRjhRmSIE)
+   ➡️ Entrando na subpasta: Olist...
+   - [application/octet-stream] Transcrição - Reunião Olist - Lista de casamento.mp4-pt-asr.vtt (ID: 1eh9rlgeS_jd3Mqx0g8W-ukes_If3lCZ2)
+   - [video/mp4] Reunião Olist - Lista de casamento.mp4 (ID: 1wjxfsr4H6Nxwp6BFLCdZ3i3Fe01JqWpr)
+- [application/vnd.google-apps.folder] Financeiro (ID: 1PCbdHMGt6O-u0Jo_yGPEUMXVvgG5Pbqt)
+   ➡️ Entrando na subpasta: Financeiro...
+   - [application/pdf] Conciliação Bancária Olist - Goianita - 09.01.2026.pdf (ID: 17yOqO4rXSZ1tmQaWuKOgDMy4hPuvWRJ3)
+   - [application/pdf] Ata da Reunião  Goianita - 08.01.2026.pdf (ID: 17f0ztTKYpeuqkyPDwZT5fqkUYgO90ePx)
+- [application/vnd.google-apps.folder] Reunião 05-01-26 (ID: 1Aod2YjlG1t8hW7AiWIOdtAIrwf84rWrz)
+   ➡️ Entrando na subpasta: Reunião 05-01-26...
+   - [application/vnd.google-apps.document] Reunião 05-01-26 (ID: 1p6ls-Sq9hQBPfK-ADCoDyk44kKTMD4oBjBayV5hMTtg)
+   - [audio/mpeg] Reunião conselho 05-01 (online-audio-converter.com).mp3 (ID: 1WW_cTHMT-vbmCB3yBJWarMnSs-twzVpe)
+- [audio/mpeg] Alinhamento  compras 23-12.m4a (ID: 1LicBDAc3W4MHgHfuXCgRPjIs83Z2MPGs)
+- [text/plain] Implantação Olist 15-12-25.mp4-pt.txt (ID: 1e6zk8M7YSoEJoJcHhMFe8GEGw3CALz3u)
+- [text/plain] Reunião Fabrícia (Contabilidade) 11_12_25-pt.txt (ID: 1g0xyOlbYlFHsQO0Xi7tisD9fSqln02c-)
+- [application/octet-stream] Implantação Olist 15-12-25.mp4-pt-asr.vtt (ID: 1tJy1Qg0PziRKJkXrXqWA-k7-rYeZiUvv)
+- [application/octet-stream] Reunião Fabrícia (Contabilidade) 11_12_25-pt-asr.vtt (ID: 1mnh73wtQbTZNn7-INHScFpb26SNP01P9)
+- [audio/mpeg] Reunião 10-12.m4a (ID: 1vf0sXB1QOSdy0OAoO3BTx_qd_kL3HA9t)
+- [application/vnd.google-apps.folder] Reunião 27-11-25 (ID: 1AWYKbELUyY7ORSAUzX4Qvzft6uRnrxJu)
+   ➡️ Entrando na subpasta: Reunião 27-11-25...
+   - [application/vnd.google-apps.document] Reunião do Conselho 27/11/2025 (ID: 1vEgIhz-Dj_xd9huFWqm8l7Hkdh6xoS2HlcX0xxafQY8)
+   - [audio/mpeg] Reunião conselho 25-11.m4a (ID: 1bLNmwTze6VPRSWX2ExRxRhJuWiGx3w37)
+- [application/vnd.google-apps.folder] Reunião 11-11 (ID: 1XRIjrb5jDxZu8SvGXXtV50LBicYOjIQU)
+   ➡️ Entrando na subpasta: Reunião 11-11...
+   - [application/vnd.google-apps.document] Ata Reunião 11-11 - Questões financeiras e dúvidas sobre o estatuto do Conselho (ID: 1R-_hSAxvahttGJRGNa0Ltbtp4CmLgIcX8J7mE7MbTBY)
+   - [audio/mpeg] 11-11 questões financeiras e inst conselho.m4a (ID: 1bsB4AQve1V45F2LSdRJyhjmopHyR7qIQ)
+- [application/vnd.google-apps.folder] Reunião 07/11/25 (ID: 1C_sJE7Nlkx5P63tEn82KiEmN2Y0_4yHn)
+   ➡️ Entrando na subpasta: Reunião 07/11/25...
+   - [application/vnd.google-apps.document] Reunião 07/11/25 Diretoria. (ID: 1Mdbvrngk2UP_m00_ZMXJKXACPsKHnd_Rf_nQtANysq4)
+   - [application/vnd.google-apps.document] Reunião 07/11 (ID: 1ItK3NOhizYE9ZLt8CFdCwiWZ1VHxMoznvftD6stCpXo)
+- [application/pdf] Reunião Go Sites.pdf (ID: 1uA20Am1UP1XBuSjej5vQW-pUqkad79kA)
+- [application/vnd.google-apps.folder] Reunião 29/10 - Diretoria (ID: 1xdqbbxqSpMCBUlMHRpOV7Vkz5fOIDNvN)
+   ➡️ Entrando na subpasta: Reunião 29/10 - Diretoria...
+   - [audio/mpeg] reunião 29-10.mp3 (ID: 1leYaAhFD_YsEIRRc5A8-d1-x1Izo3JRh)
+   - [application/pdf] Reunião 29_10_25 - Goianita.pdf (ID: 1r4Gwu1lTGGZi4kfSfekOnyRBEBaYt3CA)
+   - [application/vnd.google-apps.document] Reunião 29/10/25 - Goianita (ID: 1UKF8SNfT23itoU8nT763WK9osWnk0-7Le7-rhem4swA)

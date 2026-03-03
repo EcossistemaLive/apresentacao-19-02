@@ -1,0 +1,56 @@
+# Squad: Design
+name: design
+version: 1.0.0
+description: >
+  Squad de Design responsável por manter o Sistema de Design Unificado V6.0
+  da Live Consultoria e auditar visualmente todos os documentos gerados
+  pelos demais squads.
+author: Cleber
+created: 2026-02-16
+updated: 2026-02-16
+
+## Source of Truth
+- **Guia de Estilo:** `Guia de estilo Live V6.0.md` (raiz do projeto)
+- **Design System Version:** V6.0 (Elite & AI-Driven Update)
+- **Mantra:** "A perfeição está nos detalhes invisíveis."
+
+## Scope
+
+### 1. Documentos da Consultoria (Live Consultoria)
+Aplicar integralmente o Guia de Estilo V6.0:
+- Paleta de cores (Dark Mode: `#06192a`, Verde Laser: `#00e800`)
+- Tipografia (Poppins + Merriweather)
+- Física de interface (micro-springs, refração)
+- Assets oficiais (Logo, textura cubes.png)
+- Checklist Elite V6.0
+
+### 2. Documentos fora da Consultoria
+Avaliar e revisar documentos gerados pelos outros squads com foco em:
+- Consistência visual
+- Legibilidade e hierarquia de informação
+- Responsividade mobile
+- Acessibilidade (contraste, navegação por teclado)
+- Performance (FCP < 50ms)
+
+## Tasks
+
+| ID | Description | Trigger |
+|----|-------------|---------|
+| apply-style-guide | Aplicar guia de estilo Live em documentos da consultoria | `/design-check [arquivo]` |
+| review-external | Revisar documentos de outros squads (fora da consultoria) | `/design-review [arquivo]` |
+| validate-elite | Executar Checklist Elite V6.0 completo | `/design-validate [arquivo]` |
+
+## Checklist Elite V6.0
+1. [ ] Física: Botões com peso e inércia (Micro-springs)
+2. [ ] Refração: Efeito de vidro com distorção no Desktop
+3. [ ] Mobile: Scroll horizontal fluido, Flashlight desligado
+4. [ ] Performance: FCP < 50ms
+5. [ ] Acessibilidade: Status compreensível sem cor verde
+6. [ ] Inteligência: Tipografia adaptativa (se módulo AI ativo)
+
+## Dependencies
+- Guia de Estilo: `Guia de estilo Live V6.0.md`
+- Prompt do Presentation Creator: `.aios-core/prompts/presentation-creator.md`
+
+## Config
+- **Rodapé obrigatório:** `© 2026 Live Consultoria` + `₢ Powered by Cléber Donato` (link mailto)

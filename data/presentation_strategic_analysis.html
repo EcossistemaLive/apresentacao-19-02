@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise Executiva: Goianita 2025/2026</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Reset CSS */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Guia de Estilo Incorporado (Tokens Obrigatórios) */
+    :root {
+      --primary-bg: #06192a;
+      /* Azul Petróleo */
+      --card-bg: #0A243D;
+      /* Azul Escuro Cards */
+      --accent-color: #00e800;
+      /* Verde Vibrante */
+      --text-primary: #ffffff;
+      --text-muted: #cccccc;
+      --font-primary: 'Poppins', sans-serif;
+      --font-secondary: 'Merriweather', serif;
+      /* Apenas para Diagnósticos */
+      --border-color: rgba(255, 255, 255, 0.1);
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 3rem;
+    }
+
+    body {
+      background-color: var(--primary-bg);
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-primary);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Layout & Estrutura */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-md);
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-logo {
+      height: 40px;
+      margin-right: var(--space-sm);
+    }
+
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .header-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-left: var(--space-sm);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Tipografia */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-primary);
+      color: var(--text-primary);
+      margin-bottom: var(--space-sm);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-md);
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      margin-top: var(--space-lg);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: var(--space-md);
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-top: var(--space-sm);
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: var(--space-sm);
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    ul li::before {
+      content: '✓';
+      color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
+
+    .text-accent {
+      color: var(--accent-color);
+    }
+
+    /* Grids & Flexbox */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .flex-group {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    /* Específicos para KPIs/Valores */
+    .kpi-item {
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: rgba(0, 232, 0, 0.1);
+      /* light green background */
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .kpi-item p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+    }
+
+    .kpi-item p strong {
+      color: var(--accent-color);
+      font-size: 1.1em;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: var(--space-md);
+      margin-top: var(--space-lg);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Animações */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container {
+        padding: var(--space-sm);
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .header-logo {
+        height: 35px;
+      }
+
+      .header-title {
+        font-size: 1.2rem;
+      }
+
+      .header-subtitle {
+        display: none;
+        /* Hide subtitle on small screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div style="display: flex; align-items: center;">
+      <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+        alt="Live Consultoria Logo" class="header-logo">
+      <span class="header-title">Live Consultoria</span>
+      <span class="header-subtitle">/ Análise Executiva</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="fade-in">Análise Executiva: Reuniões Estratégicas Goianita 2025/2026</h1>
+
+    <section class="container fade-in">
+      <h2>1. Visão Geral & Contexto</h2>
+      <div class="card">
+        <h3>Objetivos Estratégicos para 2026</h3>
+        <ul>
+          <li>Foco primordial em <strong class="text-accent">Sobrevivência Digital</strong>, garantindo a adaptação e
+            resiliência no ambiente online.</li>
+          <li>Iniciativas de <strong class="text-accent">Profissionalização</strong> para otimizar processos e elevar a
+            qualificação da equipe.</li>
+          <li>Implementação de <strong class="text-accent">Governança Corporativa</strong> para decisões mais
+            estruturadas e transparentes.</li>
+        </ul>
+        <p><strong>Prazo Crítico:</strong> <strong class="text-accent">05/01/2026</strong>, data limite para a virada de
+          chave fiscal e operacional, essencial para a conformidade e eficiência.</p>
+        <p><strong>Mudança Cultural:</strong> Transição estratégica de um modelo de decisões centralizadas (liderança do
+          Sr. Carlos) para um regime de <strong class="text-accent">decisões colegiadas</strong>, sob a égide de um
+          Conselho Gestor.</p>
+      </div>
+    </section>
+
+    <section class="container fade-in">
+      <h2>2. Frente Tecnológica: Olist & ERP</h2>
+      <div class="card">
+        <h3>Decisões Validadas para a Infraestrutura Tecnológica</h3>
+        <ul>
+          <li><strong>Sistema Central:</strong> Adoção do <strong class="text-accent">Olist como ERP
+              centralizador</strong>, eliminando a dependência de servidores locais.
+            <p><em>Benefício:</em> Economia estimada de ~R$ 15.000/mês e integração nativa com marketplaces.</p>
+          </li>
+          <li><strong>Cadastro de Produtos:</strong> Implementação de método manual via planilha em lotes, garantindo a
+            segurança e acurácia dos dados.
+            <p><em>Regra Crucial:</em> Bloqueio total de venda sem estoque e proibição de alteração de preço diretamente
+              no PDV para manter a integridade.</p>
+          </li>
+          <li><strong>Segurança da Informação:</strong> Programação de formatação completa de todas as máquinas em
+            Janeiro/2026 para mitigar riscos de sabotagem e vulnerabilidades legadas do antigo setor de TI.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container fade-in">
+      <h2>3. Frente Fiscal: Reforma Tributária</h2>
+      <div class="card">
+        <h3>Impacto Imediato e Ajustes Necessários</h3>
+        <ul>
+          <li><strong>Obrigatoriedade:</strong> Destaque mandatório dos impostos <strong class="text-accent">IBS e
+              CBS</strong> nas notas fiscais a partir de Janeiro/2026.</li>
+          <li><strong>Classificação:</strong> Revisão urgente e minuciosa dos <strong class="text-accent">NCMs</strong>
+            de todos os produtos para evitar bitributação e garantir a conformidade fiscal.</li>
+          <li><strong>Regime Tributário:</strong> Confirmação da permanência da empresa no <strong
+              class="text-accent">Lucro Real</strong>, demandando parametrização fiscal complexa e a especificação de
+            CFOPs para cada operação.</li>
+          <li><strong>Automação:</strong> Validação do uso de Inteligência Artificial para auxiliar na classificação
+            fiscal de aproximadamente <strong class="text-accent">6.000 produtos</strong>, otimizando o processo e
+            reduzindo erros.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container fade-in">
+      <h2>4. Frente Comercial: Parceria "Casa dos Enxovais"</h2>
+      <div class="card">
+        <h3>Estratégia Store-in-Store (Loja 85)</h3>
+        <ul>
+          <li><strong>Modelo de Parceria:</strong> A "Casa dos Enxovais" entrará com um mix completo de produtos de
+            cama, mesa e banho, e sua expertise em vendas digitais.</li>
+          <li><strong>Layout Agressivo:</strong> Fechamento estratégico da saída independente da loja 85. O cliente será
+            <strong class="text-accent">obrigado a circular</strong> pela área de vendas da Goianita para acessar a
+            saída, replicando o conceito de fluxo da "Tok&Stok".
+          </li>
+        </ul>
+        <h3>KPIs de Permanência (Avaliação em 3 Meses)</h3>
+        <div class="grid">
+          <div class="kpi-item">
+            <p><strong>Venda Mensal &lt; R$ 50k:</strong> <strong class="text-accent">Fim da parceria</strong>
+              (indicador de inviabilidade).</p>
+          </div>
+          <div class="kpi-item">
+            <p><strong>Venda Mensal R$ 50k - R$ 100k:</strong> <strong class="text-accent">Continuidade</strong>
+              (indicador de potencial e viabilidade mínima).</p>
+          </div>
+          <div class="kpi-item">
+            <p><strong>Venda Mensal &gt; R$ 100k:</strong> <strong class="text-accent">Expansão</strong> para loja
+              vizinha (indicador de sucesso e crescimento).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container fade-in">
+      <h2>5. Crise Financeira & Governança</h2>
+      <div class="card">
+        <h3>Gestão de Crise (Novembro/2025)</h3>
+        <ul>
+          <li><strong>Ameaça Identificada:</strong> Risco iminente e real de penhora e bloqueio judicial de ativos da
+            empresa.</li>
+          <li><strong>Solução Adotada:</strong> Venda estratégica de imóvel (T4) para aporte de liquidez, contudo, com
+            <strong class="text-accent">travas jurídicas</strong> rigorosas impostas pelo Conselho.
+            <p><em>Mecanismo:</em> O capital da venda será direcionado via "Pagamento de Cotas" aos sócios, evitando o
+              depósito direto na conta da empresa para prevenir bloqueio imediato.</p>
+          </li>
+        </ul>
+        <h3>Conselho Gestor</h3>
+        <ul>
+          <li>O estatuto do Conselho Gestor foi <strong class="text-accent">aprovado por unanimidade</strong>,
+            formalizando a nova estrutura de decisão.</li>
+          <li><strong>Pesos de Voto:</strong> Sócios (2 votos), Consultores (1 voto). As decisões estratégicas agora
+            exigem um <strong class="text-accent">quórum qualificado</strong>, garantindo deliberações mais robustas e
+            participativas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container fade-in">
+      <h2>6. Próximos Passos (Plano de Ação)</h2>
+      <div class="card">
+        <h3>Cronograma de Atividades Chave</h3>
+        <ul>
+          <li><strong>Imediato:</strong> Validação urgente dos arquivos XML de notas fiscais, com foco nos novos campos
+            de impostos exigidos pela reforma tributária.</li>
+          <li><strong>Até 05/01/2026:</strong> Organização de um "mutirão" intensivo para o cadastro de produtos,
+            priorizando itens da <strong class="text-accent">Curva A</strong>.</li>
+          <li><strong>Janeiro/2026:</strong> Realização de um Inventário Geral e "Sanitização" completa do Estoque para
+            garantir a acurácia e otimização.</li>
+          <li><strong>Q1/2026:</strong> Reavaliação da parceria com Ítalo e expansão estratégica para novos canais de
+            venda, incluindo Shopee e Mercado Livre oficial.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&#169; <strong class="text-accent">2026</strong> Live Consultoria. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+
+</html>

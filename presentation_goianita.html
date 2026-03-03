@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruções de Comunicação: Transição de Loja — Casa Goianita</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+            --ease-fluid: cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 232, 0, 0.05) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .logo {
+            height: 60px;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s var(--ease-fluid);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #fff 0%, #00e800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s var(--ease-fluid);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            animation: fadeInUp 1s var(--ease-fluid) 0.2s backwards;
+        }
+
+        section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-fluid);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: var(--space-md);
+            margin-bottom: 2rem;
+            transition: transform 0.3s var(--ease-fluid), border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .manifesto-text {
+            font-family: var(--font-secondary);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .slogan-box {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0, 232, 0, 0.05);
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .slogan-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .time-badge {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 700;
+            height: fit-content;
+        }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria" class="logo">
+            <h1>GOIANITA</h1>
+            <p class="subtitle">Instruções de Comunicação: Transição e Mudança de Loja — Tradição que Pulsa.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>01. O Manifesto</h2>
+            <div class="card">
+                <p>Há 25 anos no Bueno, a Goianita fincou suas raízes. Nosso propósito sempre foi claro: <strong>fazer
+                        parte da história de cada família que escolhe construir o seu lar em Goiás.</strong></p>
+                <div class="manifesto-text">
+                    "Goiás não é apenas o interior do Brasil; Goiás é o coração — e a Goianita é o coração que pulsa."
+                </div>
+                <p>Nossa promessa é a <strong>Curadoria com Alma Territorial</strong>. Cada produto escolhido carrega a
+                    sofisticação do Cerrado Moderno, garantindo que os próximos 25 anos sejam ainda mais conectados com
+                    você.</p>
+            </div>
+        </section>
+
+        <section class="container" style="background: rgba(0,0,0,0.2);">
+            <div class="container">
+                <h2>02. Slogan e Conceito</h2>
+                <div class="card">
+                    <p>Nossa comunicação agora foca na vitalidade e na continuidade. O "movimento" tornou-se "pulsação".
+                    </p>
+                    <div class="slogan-box">
+                        <div class="slogan-text">"Goianita: 25 Anos no Bueno. Tradição que pulsa."</div>
+                        <p style="margin-top: 1rem; color: var(--accent-color); opacity: 0.8;">Curadoria com alma
+                            territorial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>03. Atendimento e Portfólio</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Mix Completo</h3>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        O melhor em utilidades domésticas, mesa posta, linha profissional e lista de casamento — agora
+                        mais acessível e moderno.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Onde Estaremos</h3>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        Esperamos você na Av. 85 (Setor Sul) e na Rua 135 (Marista). Nossa tradição continua pulsando
+                        forte.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="background: rgba(0,0,0,0.1);">
+            <div class="container">
+                <h2>04. Roteiros de Vídeo (Destaques)</h2>
+                <div class="card">
+                    <div class="timeline-item">
+                        <div class="time-badge">INSTITUCIONAL</div>
+                        <div><strong>Três Gerações:</strong> "Nasci de um sonho que escolheu Goiás como terra firme. Vi
+                            o endereço virar lar."</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-badge">EDITORIAL</div>
+                        <div><strong>Acessível:</strong> "Nem popular, nem luxo inacessível. O equilíbrio perfeito para
+                            o seu Cerrado Moderno."</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-badge">CURADORIA</div>
+                        <div><strong>Com Alma:</strong> "Não vendemos objetos, curamos escolhas. A tradição que pulsa em
+                            cada peça."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>05. Frases Marcantes</h2>
+            <div class="grid">
+                <div class="card">
+                    <p>"Goiás é o coração. A Goianita é a pulsação."</p>
+                </div>
+                <div class="card">
+                    <p>"Escolhido com alma: nossa curadoria agora pulsa mais forte."</p>
+                </div>
+                <div class="card">
+                    <p>"O Cerrado Moderno em cada detalhe do seu lar."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria" style="height: 30px; margin-bottom: 1rem; opacity: 0.5;">
+            <p>© 2026 Live Consultoria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+# Squad: Comms (Comunicação)
+name: comms
+version: 1.0.0
+description: >
+  Squad de Comunicação responsável por toda documentação formal,
+  apresentações corporativas e registro de reuniões da Live Consultoria.
+author: Cleber
+created: 2026-02-16
+updated: 2026-02-16
+
+## Agents
+
+| ID | Name | Role | Prompt |
+|----|------|------|--------|
+| secretary | Secretary | Executive Secretary / Governance Auditor | `.aios-core/prompts/secretary-minutes.md` |
+| presentation-creator | Presentation Creator | Front-End Engineer & Corporate Copywriter | `.aios-core/prompts/presentation-creator.md` |
+
+## Tasks
+
+| ID | Description | Agent | Trigger |
+|----|-------------|-------|---------|
+| generate-minutes | Gerar ata de reunião a partir de transcrição | secretary | `/ata [texto]` |
+| generate-presentation | Gerar apresentação HTML da ata | presentation-creator | `/apresentacao [texto]` |
+| full-pipeline | Gerar ata + apresentação automaticamente | secretary → presentation-creator | `/ata [texto]` (auto-trigger seção 7) |
+
+## Workflows
+
+### Pipeline Completo: Transcrição → Ata → Apresentação
+```
+1. Receber transcrição (texto ou áudio*)
+2. Secretary gera Ata de Reunião (Markdown)
+3. Presentation Creator gera Apresentação (HTML)
+4. Ambos os arquivos ficam disponíveis no diretório do projeto
+```
+*Áudio: atualmente limitado por quota da API Gemini
+
+## Dependencies
+- `@google/generative-ai`
+- Script: `.aios-core/scripts/run-prompt.js`
+- Model: `gemini-2.5-flash`
+
+## Config
+- **Env:** `GEMINI_API_KEY` (obrigatório)
+- **Output encoding:** UTF-8 (via flag `-o` do `run-prompt.js`)
+
+## Commands Reference
+```bash
+# Gerar ata de reunião
+node .aios-core/scripts/run-prompt.js .aios-core/prompts/secretary-minutes.md <input.md> -o <Ata_Output.md>
+
+# Gerar apresentação HTML
+node .aios-core/scripts/run-prompt.js .aios-core/prompts/presentation-creator.md <ata.md> -o <Apresentacao_Output.html>
+
+# Pipeline completo (shell)
+node .aios-core/scripts/run-prompt.js .aios-core/prompts/secretary-minutes.md <input.md> -o Ata.md && \
+node .aios-core/scripts/run-prompt.js .aios-core/prompts/presentation-creator.md Ata.md -o Apresentacao.html
+```

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Reunião — 26/02/2026 | Live Consultoria</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+            --danger: #ff4d4d;
+            --warning: #ffaa00;
+            --info: #4db8ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 25, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header .header-meta {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        header .header-meta strong {
+            color: var(--accent-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 232, 0, 0.1);
+            border: 1px solid rgba(0, 232, 0, 0.3);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .badge.danger {
+            background: rgba(255, 77, 77, 0.1);
+            border-color: rgba(255, 77, 77, 0.3);
+            color: var(--danger);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(0, 232, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .card p,
+        .card li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+        }
+
+        .card .decision {
+            margin-top: 1rem;
+            padding: 10px 14px;
+            background: rgba(0, 232, 0, 0.08);
+            border-left: 3px solid var(--accent-color);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            color: var(--text-primary);
+        }
+
+        .card .decision strong {
+            color: var(--accent-color);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: rgba(0, 232, 0, 0.12);
+            color: var(--accent-color);
+            text-align: left;
+            padding: 10px 12px;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(0, 232, 0, 0.3);
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Status badges */
+        .status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status.doing {
+            background: rgba(0, 232, 0, 0.15);
+            color: var(--accent-color);
+        }
+
+        .status.todo {
+            background: rgba(77, 184, 255, 0.15);
+            color: var(--info);
+        }
+
+        .status.done {
+            background: rgba(0, 232, 0, 0.3);
+            color: #00ff00;
+        }
+
+        .status.critical {
+            background: rgba(255, 77, 77, 0.2);
+            color: var(--danger);
+        }
+
+        /* Alert */
+        .alert {
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.88rem;
+            border-left: 4px solid;
+        }
+
+        .alert.warning {
+            background: rgba(255, 170, 0, 0.08);
+            border-color: var(--warning);
+            color: var(--warning);
+        }
+
+        .alert.danger {
+            background: rgba(255, 77, 77, 0.08);
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .alert strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Participants grid */
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .participant-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .participant-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .participant-card .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #06192a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .participant-card .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .participant-card .role {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Fade animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        footer .dev {
+            opacity: 0.4;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        /* Print */
+        @media print {
+            header {
+                position: static;
+            }
+
+            body {
+                background: #fff;
+                color: #000;
+            }
+
+            .card {
+                border: 1px solid #ccc;
+                box-shadow: none;
+                background: #fff;
+            }
+
+            th {
+                background: #eee;
+                color: #333;
+            }
+
+            td {
+                color: #333;
+            }
+
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.2rem;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            th,
+            td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live Consultoria">
+        <div class="header-meta">
+            <strong>ATA DE REUNIÃO</strong><br>
+            26 de Fevereiro de 2026
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero fade-in">
+            <h1>Fechamento de Caixa e Processos Financeiros</h1>
+            <p class="subtitle">Reunião de alinhamento operacional — Conciliação, fluxo de caixa e definição de
+                processos</p>
+            <div class="badge-row">
+                <span class="badge">📋 12 Ações Definidas</span>
+                <span class="badge">👥 6 Participantes</span>
+                <span class="badge danger">⚠️ 6 Alertas Críticos</span>
+            </div>
+        </section>
+
+        <!-- PARTICIPANTES -->
+        <section class="fade-in">
+            <div class="section-title">👥 Participantes</div>
+            <div class="participants-grid">
+                <div class="participant-card">
+                    <div class="avatar">C</div>
+                    <div class="name">Cléber</div>
+                    <div class="role">Consultor · Condutor</div>
+                </div>
+                <div class="participant-card">
+                    <div class="avatar">E</div>
+                    <div class="name">Eduardo</div>
+                    <div class="role">Consultor · Executor Técnico</div>
+                </div>
+                <div class="participant-card">
+                    <div class="avatar">P</div>
+                    <div class="name">Phillip</div>
+                    <div class="role">Consultor</div>
+                </div>
+                <div class="participant-card">
+                    <div class="avatar">E</div>
+                    <div class="name">Eryca</div>
+                    <div class="role">Financeiro</div>
+                </div>
+                <div class="participant-card">
+                    <div class="avatar">L</div>
+                    <div class="name">Leila</div>
+                    <div class="role">Financeiro</div>
+                </div>
+                <div class="participant-card">
+                    <div class="avatar">K</div>
+                    <div class="name">Késia</div>
+                    <div class="role">Caixa · Loja 85</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAUTA -->
+        <section class="fade-in">
+            <div class="section-title">🎯 Pauta da Reunião</div>
+            <div class="card">
+                <ul>
+                    <li>Conciliação retroativa do caixa (período desde implantação do sistema)</li>
+                    <li>Definição do processo diário de abertura/fechamento de caixa</li>
+                    <li>Relatórios necessários para conferência financeira</li>
+                    <li>Tratamento de vales-crédito (vale troca) no PMenu</li>
+                    <li>Correção de devoluções não registradas</li>
+                    <li>Treinamento da equipe operacional</li>
+                    <li>Cálculo e prazo de comissões</li>
+                    <li>Integração de duplicatas Olist × Sicoob</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DELIBERAÇÕES -->
+        <section class="fade-in">
+            <div class="section-title">📝 Deliberações</div>
+
+            <div class="card">
+                <h3>1. Fechamento de Caixa — Período Retroativo</h3>
+                <p>O caixa foi fechado de forma agrupada (3 a 4 dias por fechamento). Eduardo irá reagrupar os
+                    documentos conforme os fechamentos reais do sistema. Primeiro grupo: dias 11–14. Segundo grupo:
+                    18–25.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Conciliação retroativa seguindo o agrupamento real dos
+                    fechamentos do sistema.</div>
+            </div>
+
+            <div class="card">
+                <h3>2. Processo Diário — A Partir de Hoje</h3>
+                <p>Caixa será aberto e fechado no mesmo dia. Késia fará o fechamento diário pela manhã (fecha o dia
+                    anterior), confere dinheiro e envia ao financeiro.</p>
+                <p><em>Treinamento de Késia adiado para amanhã (27/02) quando o fluxo estiver normalizado.</em></p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Processo diário inicia amanhã. Treinamento com Eduardo
+                    dia 27/02.</div>
+            </div>
+
+            <div class="card">
+                <h3>3. Fluxo: Caixa → Financeiro → Tesouraria</h3>
+                <p>Abre caixa → Opera → Fecha → Sangria → Relatório de vendas + Relatório de caixa → Assinatura → Envio
+                    ao financeiro → Dupla checagem (Eryca/Leila) → Dinheiro vira tesouraria.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Fluxo aprovado como processo oficial. Recebimento em
+                    dinheiro pode ser configurado para cair na conta de tesouraria automaticamente.</div>
+            </div>
+
+            <div class="card">
+                <h3>4. Correção de Formas de Pagamento</h3>
+                <p>Identificados erros: dinheiro lançado como PIX, cartão 3x lançado como 2x. Todas as vendas devem ser
+                    registradas corretamente a partir de hoje.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Registro obrigatório com forma de pagamento correta.
+                    Erros anteriores serão corrigidos na conciliação.</div>
+            </div>
+
+            <div class="card">
+                <h3>5. Vales-Crédito — PMenu</h3>
+                <p>Vendas de vale troca salvas no PMenu mas não finalizadas. Forma de pagamento para vale crédito já
+                    criada. Pendência: como dar baixa no PMenu.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Eduardo verificará com Karinne o processo de baixa.
+                    Se não houver fechamento no PMenu, entradas serão finalizadas manualmente.</div>
+            </div>
+
+            <div class="card">
+                <h3>6. Devoluções Não Registradas (R$ 4.000)</h3>
+                <p>Débora reportou duas devoluções de equipamento não registradas. Feitas pelo PMenu antigo. Financeiro
+                    confirmou que não recebeu nenhum documento desde janeiro.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Eduardo corrigirá hoje à tarde com Karinne. Repasse de
+                    documentação deve ser restabelecido imediatamente.</div>
+            </div>
+
+            <div class="card">
+                <h3>7. Comissões</h3>
+                <p>Eduardo calculará comissões. Pagamento no dia 6. Contabilidade precisa da informação ~2 dias antes.
+                    Trocas a partir de 26/02 entram na próxima folha.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Eduardo gera novo relatório de trocas (loja 135),
+                    desconsiderando o anterior para evitar duplicidade. Entrega até 04/03.</div>
+            </div>
+
+            <div class="card">
+                <h3>8. Integração Duplicatas — Olist × Sicoob</h3>
+                <p>Possibilidade de integrar Olist com Sicoob para automatizar conciliação de duplicatas. Necessário:
+                    contato com Sicoob, boleto para homologação.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Configuração será organizada na semana de 02/03/2026.
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>9. Relatórios para o Financeiro</h3>
+                <p>Eduardo apresentou dois modelos de relatório. Será adotada a combinação de ambos: data, operador,
+                    formas de pagamento separadas e valores.</p>
+                <div class="decision"><strong>✅ DECISÃO:</strong> Combinação dos dois modelos de relatório para
+                    substituir o controle manual.</div>
+            </div>
+        </section>
+
+        <!-- PLANO DE AÇÃO -->
+        <section class="fade-in">
+            <div class="section-title">📊 Plano de Ação</div>
+            <div class="card" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ação</th>
+                            <th>Responsável</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Conciliação retroativa do caixa</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status doing">Em andamento</span></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Conferência de dinheiro em caixa</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Treinamento de Késia (fechamento diário)</td>
+                            <td>Eduardo</td>
+                            <td>27/02</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Verificar com Karinne baixa de vales-crédito no PMenu</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Corrigir devoluções não registradas (R$ 4.000)</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>Enviar vídeo de treinamento para Karinne</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status done">Pronto</span></td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Solicitar relatório de trocas (loja 135)</td>
+                            <td>Eduardo</td>
+                            <td>26/02</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Calcular e entregar comissões</td>
+                            <td>Eduardo</td>
+                            <td>04/03</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>Integração Olist × Sicoob (duplicatas)</td>
+                            <td>Eduardo</td>
+                            <td>Sem. 02/03</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Implementar combinação dos dois relatórios</td>
+                            <td>Eduardo</td>
+                            <td>A definir</td>
+                            <td><span class="status todo">A iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Restabelecer repasse de documentos ao financeiro</td>
+                            <td>Eduardo / Karinne</td>
+                            <td>Imediato</td>
+                            <td><span class="status critical">Crítico</span></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Dupla checagem diária (caixa)</td>
+                            <td>Eryca / Leila</td>
+                            <td>Diário</td>
+                            <td><span class="status todo">A partir 27/02</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ALERTAS -->
+        <section class="fade-in">
+            <div class="section-title">⚠️ Pontos de Atenção</div>
+
+            <div class="alert danger">
+                <strong>🚨 Falha grave de repasse documental</strong>
+                Desde janeiro, nenhum documento de vendas do site está sendo repassado ao financeiro. Eryca e Leila
+                confirmaram: "Nós não recebemos nada." — Requer ação imediata.
+            </div>
+
+            <div class="alert danger">
+                <strong>🚨 Devoluções não registradas (R$ 4.000)</strong>
+                Duas devoluções de equipamento não constam no sistema. Risco de divergência contábil significativa.
+            </div>
+
+            <div class="alert warning">
+                <strong>⚠️ PMenu — Mecanismo de fechamento</strong>
+                Incerteza se o PMenu possui funcionalidade de fechamento formal. Vendas registradas mas não finalizadas
+                podem permanecer em aberto indefinidamente.
+            </div>
+
+            <div class="alert warning">
+                <strong>⚠️ Duplicidade em comissões</strong>
+                Risco de duplicar valores entre relatórios. Eduardo alertou e decidiu gerar novo relatório
+                desconsiderando o anterior.
+            </div>
+
+            <div class="alert warning">
+                <strong>⚠️ Cupom fiscal em trocas</strong>
+                Divergência sobre quando gerar cupom: loja 135 informou "não precisa", mas há exceções (cliente exige ou
+                eletrodomésticos). Requer padronização.
+            </div>
+
+            <div class="alert warning">
+                <strong>⚠️ Vendas do site (Vtex) sem controle</strong>
+                Desde 26 de janeiro, entradas via site não possuem controle adequado. Adriano é responsável, mas
+                situação segue sem resolução.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Live Consultoria. Todos os direitos reservados.</p>
+        <p class="dev">Desenvolvido por Cléber Donato</p>
+    </footer>
+
+    <!-- JS Fade-in -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>

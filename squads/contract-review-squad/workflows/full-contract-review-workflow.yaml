@@ -1,0 +1,73 @@
+workflow_name: full_contract_review
+description: "Pipeline completo de revisão de contrato — da extração de cláusulas ao relatório executivo com redlines"
+
+agent_sequence:
+  - clause-extractor
+  - risk-flagger
+  - playbook-enforcer
+  - redline-drafter
+  - summary-reporter
+
+key_commands:
+  - "*review-contract"
+  - "*full-review"
+
+trigger_threshold: 1
+typical_duration: "30-60 minutes"
+
+success_indicators:
+  - "Cláusulas extraídas e estruturadas com partes e datas"
+  - "Riscos identificados e pontuados com justificativa"
+  - "Conformidade com playbook verificada — desvios documentados"
+  - "Redlines geradas com linguagem alternativa e rationale"
+  - "Sumário executivo com risk score, recomendações e decision matrix"
+
+transitions:
+  clauses_extracted:
+    trigger: "Cláusulas extraídas — extracted-clauses.json gerado"
+    confidence: 0.95
+    greeting_message: "📄 Cláusulas extraídas. Iniciando análise de riscos."
+    next_steps:
+      - command: "*flag-risks"
+        args_template: "--clauses={extracted_clauses_path}"
+        description: "Identificar e pontuar riscos em cada cláusula"
+        priority: 1
+
+  risks_flagged:
+    trigger: "Riscos identificados — risk-report.json gerado"
+    confidence: 0.90
+    greeting_message: "⚠️ Riscos identificados. Verificando conformidade com playbook."
+    next_steps:
+      - command: "*enforce-playbook"
+        args_template: "--clauses={extracted_clauses_path} --playbook={playbook_path}"
+        description: "Verificar cada cláusula contra o playbook corporativo"
+        priority: 1
+
+  playbook_checked:
+    trigger: "Compliance verificado — compliance-report.json gerado"
+    confidence: 0.90
+    greeting_message: "📘 Conformidade verificada. Gerando redlines."
+    next_steps:
+      - command: "*draft-redlines"
+        args_template: "--risks={risk_report_path} --compliance={compliance_report_path}"
+        description: "Gerar redlines com linguagem alternativa para cláusulas flaggadas"
+        priority: 1
+
+  redlines_drafted:
+    trigger: "Redlines geradas — redlined-document.md gerado"
+    confidence: 0.95
+    greeting_message: "✏️ Redlines geradas. Produzindo relatório executivo."
+    next_steps:
+      - command: "*generate-summary"
+        args_template: "--review_data={review_output_path}"
+        description: "Consolidar tudo em sumário executivo com recomendações"
+        priority: 1
+
+  review_complete:
+    trigger: "Sumário executivo gerado — executive-summary.md gerado"
+    confidence: 0.95
+    greeting_message: "📊 Revisão completa! Relatório executivo disponível."
+    next_steps:
+      - command: "*create-report"
+        description: "Exportar relatório em formato desejado"
+        priority: 1

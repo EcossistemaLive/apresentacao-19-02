@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status do Projeto — Consultoria Eduardo | Live Consultoria</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --accent-glow: rgba(0, 232, 0, 0.15);
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --text-dim: #8899aa;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+            --space-sm: 1rem;
+            --space-xs: 0.5rem;
+            --danger: #ff4757;
+            --warning: #ffa502;
+            --success: #00e800;
+            --info: #3498db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(6, 25, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header .header-info {
+            text-align: right;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        header .header-info span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero .meta-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge .icon {
+            font-size: 1.1rem;
+        }
+
+        .badge strong {
+            color: var(--accent-color);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        section .section-title .num {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        section .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding-left: 3.25rem;
+            font-size: 0.9rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 232, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        .card p,
+        .card li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        thead th {
+            background: rgba(0, 232, 0, 0.08);
+            color: var(--accent-color);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        tbody td {
+            padding: 0.65rem 1rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tbody tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* STATUS BADGES */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-done {
+            background: rgba(0, 232, 0, 0.15);
+            color: var(--success);
+        }
+
+        .status-progress {
+            background: rgba(52, 152, 219, 0.15);
+            color: var(--info);
+        }
+
+        .status-pending {
+            background: rgba(255, 165, 2, 0.15);
+            color: var(--warning);
+        }
+
+        .status-blocked {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--danger);
+        }
+
+        /* GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        /* STAT CARDS */
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card .stat-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-card .stat-label {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), var(--border-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.55rem;
+            top: 0.4rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid var(--primary-bg);
+        }
+
+        .timeline-item .tl-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-item .tl-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .timeline-item .tl-week {
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FOLDER TREE */
+        .folder-tree {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .folder-tree .folder {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .folder-tree .file {
+            color: var(--text-muted);
+        }
+
+        .folder-tree .new-badge {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        /* ALERT BOX */
+        .alert {
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background: rgba(255, 165, 2, 0.1);
+            border: 1px solid rgba(255, 165, 2, 0.3);
+        }
+
+        .alert-info {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .alert-success {
+            background: rgba(0, 232, 0, 0.08);
+            border: 1px solid rgba(0, 232, 0, 0.2);
+        }
+
+        .alert .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert .alert-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .alert .alert-text strong {
+            color: var(--text-primary);
+        }
+
+        /* CAREER TRACK */
+        .career-track {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+
+        .career-phase {
+            flex: 1;
+            padding: 1.25rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            text-align: center;
+        }
+
+        .career-phase:first-child {
+            border-radius: 12px 0 0 12px;
+        }
+
+        .career-phase:last-child {
+            border-radius: 0 12px 12px 0;
+        }
+
+        .career-phase .phase-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .career-phase .phase-detail {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .career-phase .phase-salary {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0.5rem 0;
+        }
+
+        .phase-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            padding: 0 0.25rem;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .progress-label span:first-child {
+            color: var(--text-muted);
+        }
+
+        .progress-label span:last-child {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #00ff88);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        footer .dev-credit {
+            opacity: 0.4;
+            font-style: italic;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        /* FADE-IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .career-track {
+                flex-direction: column;
+            }
+
+            .career-phase:first-child {
+                border-radius: 12px 12px 0 0;
+            }
+
+            .career-phase:last-child {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .phase-arrow {
+                justify-content: center;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live Consultoria">
+        <div class="header-info">
+            <div><span>25 de Fevereiro de 2026</span></div>
+            <div>Status Report Interno</div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero fade-in">
+        <h1>Novo Cliente — Eduardo</h1>
+        <p class="subtitle">Consultoria Estratégica para empresa de tecnologia em intermediação de vendas. 6 encontros
+            presenciais, 12 semanas, planejamento de 12 meses.</p>
+        <div class="meta-badges">
+            <div class="badge"><span class="icon">💰</span> Contrato: <strong>R$ 12.000</strong></div>
+            <div class="badge"><span class="icon">📅</span> Duração: <strong>12 semanas</strong></div>
+            <div class="badge"><span class="icon">🤝</span> Encontros: <strong>6 presenciais</strong></div>
+            <div class="badge"><span class="icon">👥</span> Empresa: <strong>5 pessoas</strong></div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="https://drive.google.com/drive/folders/1TxqVy9A0R8ESm5ZxOOdSS5Xv_eG9nv7D" target="_blank"
+                style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, rgba(0,232,0,0.12), rgba(0,232,0,0.04)); border: 1px solid rgba(0,232,0,0.3); border-radius: 12px; padding: 1rem 2rem; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease;"
+                onmouseover="this.style.borderColor='var(--accent-color)';this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.borderColor='rgba(0,232,0,0.3)';this.style.transform='none'">
+                <span style="font-size: 2rem;">📂</span>
+                <div>
+                    <div style="font-weight: 700; font-size: 1rem; color: var(--accent-color);">Acessar Documentos no
+                        Google Drive</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Luiz, clique aqui para ler todos os
+                        arquivos gerados para o projeto</div>
+                </div>
+                <span style="font-size: 1.2rem; color: var(--accent-color);">→</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. RESUMO DO CONTRATO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">1</span> Resumo do Contrato</div>
+            <p class="section-desc">Visão geral do engajamento e dados do cliente.</p>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Detalhe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cliente</strong></td>
+                            <td>Eduardo (sócio investidor)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa</strong></td>
+                            <td>Plataforma de intermediação de vendas online (tech)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Composição</strong></td>
+                            <td>2 investidores + 3 programadores</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valor</strong></td>
+                            <td>R$ 12.000,00 (até 4x de R$ 3.000)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escopo</strong></td>
+                            <td>Plano de negócios + planejamento departamental (12 meses)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ação Prioritária</strong></td>
+                            <td>Contratação de Gestor Operacional (~R$ 5.000/mês, partner track)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">📞</div>
+                <div class="alert-text">
+                    <strong>Status do contato:</strong> Cliente <strong>respondeu</strong> em 27/02 informando CPF
+                    (Eduardo Cesar de Oliveira) e detalhes operacionais (plataformas de veículos e imóveis). Reuniões
+                    marcadas para <strong>Sextas-feiras</strong>. Aguardando CNPJ e Endereço para fechar a Proposta
+                    (Fase 4).
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. O QUE JÁ FOI FEITO -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">2</span> O Que Já Foi Feito</div>
+            <p class="section-desc">Progresso completo do setup inicial do projeto.</p>
+
+            <div class="grid-3">
+                <div class="stat-card">
+                    <div class="stat-num">9</div>
+                    <div class="stat-label">Documentos Criados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">27</div>
+                    <div class="stat-label">Tasks no ClickUp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Listas Estruturadas</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 1 — Planejamento e Setup</span><span>100%</span></div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 2 — Templates e Estrutura de Pastas</span><span>100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div
+                    style="font-size:0.7rem;color:var(--text-dim);margin-top:-0.5rem;margin-bottom:0.5rem;padding-left:0.25rem;">
+                    Templates prontos — documentos do cliente serão coletados nos encontros</div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 3 — ClickUp Workspace</span><span>100%</span></div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 4 — Proposta M.A.P.C.A</span><span>0%</span></div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 5 — Elaboração do Processo Seletivo</span><span>100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div
+                    style="font-size:0.7rem;color:var(--text-dim);margin-top:-0.5rem;margin-bottom:0.5rem;padding-left:0.25rem;">
+                    JD, plano de carreira e processo elaborados — execução após aprovação</div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Fase 6 — Planejamento Estratégico</span><span>66%</span></div>
+                    <div class="progress-bar">
+                        <div class="fill" style="width: 66%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DOCUMENTOS GERADOS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">3</span> Documentos Gerados</div>
+            <p class="section-desc">Estrutura de pastas e arquivos criados no Google Drive.</p>
+
+            <div class="card">
+                <div class="folder-tree">
+                    <span class="folder">📁 Cliente novo/</span><br>
+                    ├── <span class="folder">📁 00_Briefing/</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 briefing_cliente.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 transcricao_audio_luiz.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 script_primeira_abordagem.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    ├── <span class="folder">📁 01_Proposta/</span> <span style="color: var(--warning);">⏳ aguardando
+                        dados</span><br>
+                    ├── <span class="folder">📁 02_Planejamento/</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 cronograma_encontros.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 plano_negocios.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 planejamento_departamentos.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    ├── <span class="folder">📁 03_RH/</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 jd_gestor_operacional.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;├── <span class="file">📄 plano_carreira.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 processo_seletivo.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    ├── <span class="folder">📁 04_Encontros/</span><br>
+                    │&nbsp;&nbsp;&nbsp;└── <span class="file">📄 encontro_01.md</span> <span
+                        class="new-badge">NOVO</span><br>
+                    └── <span class="folder">📁 05_Entregaveis/</span> <span style="color: var(--warning);">⏳
+                        pós-encontros</span>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 1rem;">
+                <div class="card">
+                    <h3>📋 Briefing & Discovery</h3>
+                    <ul>
+                        <li><strong>Briefing do cliente</strong> — Dados extraídos da transcrição, composição
+                            societária, escopo completo</li>
+                        <li><strong>Transcrição do áudio</strong> — Áudio original do Luiz preservado</li>
+                        <li><strong>Script de abordagem</strong> — Roteiro com 17 perguntas para coleta de dados</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📅 Planejamento</h3>
+                    <ul>
+                        <li><strong>Cronograma 12 semanas</strong> — 6 encontros com objetivos e entregáveis detalhados
+                        </li>
+                        <li><strong>Plano de negócios</strong> — Template com Lean Canvas, organograma, DRE</li>
+                        <li><strong>Planejamento departamental</strong> — 5 departamentos com KPIs e metas TO-BE</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>👥 RH — Gestor Operacional</h3>
+                    <ul>
+                        <li><strong>Job Description</strong> — Perfil, competências STAR, requisitos</li>
+                        <li><strong>Plano de carreira</strong> — Trilha Entry → Growth → Partner com vesting</li>
+                        <li><strong>Processo seletivo</strong> — 5 etapas + case prático + scorecard</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🏢 Encontro 1</h3>
+                    <ul>
+                        <li><strong>Pauta completa</strong> — 6 blocos temáticos, 2h de duração</li>
+                        <li><strong>Checklist de materiais</strong> — O que levar para a reunião</li>
+                        <li><strong>Template de ata</strong> — Formato 5W2H para plano de ação</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CLICKUP WORKSPACE -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">4</span> Workspace ClickUp</div>
+            <p class="section-desc">Space "Consultoria — Eduardo" criado no workspace <strong>Ecossistema Live</strong>
+                via API com 27 tasks.</p>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lista</th>
+                            <th>Tasks</th>
+                            <th>Escopo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>📋 Planejamento Estratégico</strong></td>
+                            <td>13</td>
+                            <td>Diagnóstico, KPIs, Roadmap, Organograma, Projeção financeira, Plano de negócios</td>
+                        </tr>
+                        <tr>
+                            <td><strong>👥 RH — Gestor Operacional</strong></td>
+                            <td>8</td>
+                            <td>JD, Plano de carreira, Publicação, Triagem, Entrevistas, Case, Contratação</td>
+                        </tr>
+                        <tr>
+                            <td><strong>📅 Encontros Presenciais</strong></td>
+                            <td>6</td>
+                            <td>Um task por encontro com data estimada (quinzenal)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="padding: 0; overflow: hidden; margin-bottom: var(--space-sm);">
+                <img src="clickup_tasks.png" alt="Tasks no ClickUp — Consultoria Eduardo"
+                    style="width: 100%; display: block; border-radius: 12px;">
+            </div>
+
+            <div class="alert alert-success">
+                <div class="alert-icon">✅</div>
+                <div class="alert-text">
+                    <strong>Automação via API:</strong> O workspace foi criado automaticamente usando o script
+                    <code>create-client-space.js</code>, que provisiona Space, Folder, 3 Listas e 27 Tasks com datas
+                    estimadas — tudo em um único comando.
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CRONOGRAMA DOS ENCONTROS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">5</span> Cronograma de Encontros</div>
+            <p class="section-desc">6 encontros presenciais ao longo de 12 semanas.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 1-2</div>
+                    <div class="tl-title">Encontro 1 — Discovery e Diagnóstico</div>
+                    <div class="tl-desc">Coleta de dados, mapeamento AS-IS, Missão/Visão/Valores, definição do rumo
+                        estratégico</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 3-4</div>
+                    <div class="tl-title">Encontro 2 — Planejamento Estratégico</div>
+                    <div class="tl-desc">Objetivos SMART 12 meses, KPIs, Roadmap trimestral, Canvas de modelo de negócio
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 5-6</div>
+                    <div class="tl-title">Encontro 3 — Estruturação Departamental</div>
+                    <div class="tl-desc">Organograma TO-BE, processos-chave, Matriz RACI, análise de gaps</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 7-8</div>
+                    <div class="tl-title">Encontro 4 — RH e Contratação</div>
+                    <div class="tl-desc">Validação da JD, processo seletivo, plano de carreira Partner Track</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 9-10</div>
+                    <div class="tl-title">Encontro 5 — Operação e Financeiro</div>
+                    <div class="tl-desc">Projeção financeira, fluxo de caixa, funil de vendas, métricas operacionais
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-week">Semanas 11-12</div>
+                    <div class="tl-title">Encontro 6 — Revisão Final</div>
+                    <div class="tl-desc">Plano de negócios consolidado, Dashboard de acompanhamento, Roadmap executivo
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PLANO DE CARREIRA DO GESTOR -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">6</span> Trilha de Crescimento — Gestor Operacional</div>
+            <p class="section-desc">Plano de carreira Entry → Growth → Partner para o novo gestor.</p>
+
+            <div class="career-track">
+                <div class="career-phase" style="border-left: 3px solid var(--success);">
+                    <div class="phase-name">🟢 ENTRY</div>
+                    <div class="phase-detail">Meses 0–6</div>
+                    <div class="phase-salary">R$ 5.000</div>
+                    <div class="phase-detail">Onboarding • KPIs • Avaliação 90d</div>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="career-phase" style="border-left: 3px solid var(--info);">
+                    <div class="phase-name">🔵 GROWTH</div>
+                    <div class="phase-detail">Meses 6–18</div>
+                    <div class="phase-salary">R$ 7-8k + Bônus</div>
+                    <div class="phase-detail">Crescimento • Liderança • Metas</div>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="career-phase" style="border-left: 3px solid #9b59b6;">
+                    <div class="phase-name">🟣 PARTNER</div>
+                    <div class="phase-detail">Mês 18+</div>
+                    <div class="phase-salary">Equity 5-10%</div>
+                    <div class="phase-detail">Vesting 4 anos • Lucros • Governança</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SCRIPT DE ABORDAGEM -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">7</span> Primeira Abordagem — Status</div>
+            <p class="section-desc">Script de contato elaborado com roteiro de 17 perguntas.</p>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">📲</div>
+                <div class="alert-text">
+                    <strong>Cléber entrou em contato com Eduardo</strong> (WhatsApp, 25/02/2026) com mensagem de
+                    apresentação e solicitação de dados. <strong>Aguardando resposta do cliente.</strong>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Roteiro de Coleta (4 Blocos)</h3>
+                    <ul>
+                        <li><strong>Bloco 1:</strong> Dados da Empresa (razão social, CNPJ, endereço)</li>
+                        <li><strong>Bloco 2:</strong> Dados dos Sócios (nomes, CPFs, representante legal)</li>
+                        <li><strong>Bloco 3:</strong> Sobre o Negócio (modelo, clientes, faturamento, stack)</li>
+                        <li><strong>Bloco 4:</strong> Logística dos Encontros (dia, local, participantes)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Dados Pendentes para Próximos Passos</h3>
+                    <ul>
+                        <li>CNPJ e razão social da empresa</li>
+                        <li>Endereço completo</li>
+                        <li>Nome e CPF do representante legal</li>
+                        <li>Nome do segundo sócio investidor</li>
+                        <li>Data do primeiro encontro presencial</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PRÓXIMOS PASSOS -->
+        <section class="fade-in">
+            <div class="section-title"><span class="num">8</span> Próximos Passos</div>
+            <p class="section-desc">Ações pendentes para dar continuidade ao projeto.</p>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ação</th>
+                            <th>Responsável</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Aguardar resposta do Eduardo</td>
+                            <td>Cléber</td>
+                            <td><span class="status status-pending">⏳ Aguardando</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Coletar dados formais (CNPJ, CPF, endereço)</td>
+                            <td>Cléber</td>
+                            <td><span class="status status-blocked">🔒 Bloqueado</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Gerar proposta M.A.P.C.A + Contrato</td>
+                            <td>IA (AgeQuodAgis)</td>
+                            <td><span class="status status-blocked">🔒 Bloqueado</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Agendar Encontro 1 — Discovery</td>
+                            <td>Cléber + Eduardo</td>
+                            <td><span class="status status-blocked">🔒 Bloqueado</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Validar JD do Gestor com Luiz</td>
+                            <td>Luiz Portal</td>
+                            <td><span class="status status-pending">⏳ Pendente</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Definir rumo estratégico (Exit/Growth/Híbrido)</td>
+                            <td>Eduardo + Sócios</td>
+                            <td><span class="status status-pending">⏳ Encontro 1</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+            alt="Live" style="height: 30px; opacity: 0.5; margin-bottom: 0.5rem;">
+        <p>© 2026 Live Consultoria. Todos os direitos reservados.</p>
+        <p class="dev-credit">Desenvolvido por Cléber Donato</p>
+    </footer>
+
+    <!-- FADE-IN OBSERVER -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

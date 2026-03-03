@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Executivo - Reunião 19/02 - Live Consultoria</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(6, 25, 42, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            height: 40px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 232, 0, 0.05) 0%, rgba(6, 25, 42, 0) 100%);
+        }
+
+        .hero h1 {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* KPI Panel */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .kpi-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-md);
+            margin-bottom: 2rem;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-color);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-decision {
+            background: rgba(0, 232, 0, 0.2);
+            color: var(--accent-color);
+        }
+
+        .badge-attention {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .badge-urgent {
+            background: rgba(255, 87, 34, 0.2);
+            color: #ff5722;
+        }
+
+        /* Progress Bars */
+        .progress-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria" class="logo">
+            <div class="date">19 de Fevereiro de 2026</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="container">
+                <h1>Dashboard de Governança</h1>
+                <p>Ata de Auditoria Sênior - Sessão Estratégica Grupo Goianita. Deliberações sobre ERP Olist,
+                    desativação de unidade e expansão digital.</p>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-number">06</span>
+                        <span class="kpi-label">Ações Estratégicas</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">04</span>
+                        <span class="kpi-label">Pautas Auditadas</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">100%</span>
+                        <span class="kpi-label">Aprovação Conselho</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">02</span>
+                        <span class="kpi-label">Alertas de Risco</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Participantes e Hierarquia</h2>
+            <div class="card table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cléber Donato</td>
+                            <td>Estrategista & Auditor</td>
+                            <td>Nível 1</td>
+                        </tr>
+                        <tr>
+                            <td>Luiz Eduardo Portal</td>
+                            <td>Diretor Executivo</td>
+                            <td>Nível 1</td>
+                        </tr>
+                        <tr>
+                            <td>Karine</td>
+                            <td>Gestora Operacional</td>
+                            <td>Nível 2</td>
+                        </tr>
+                        <tr>
+                            <td>Eduardo</td>
+                            <td>Consultor Técnico</td>
+                            <td>Nível 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Deliberações do Conselho</h2>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Decidido</span> ERP Olist vs Pmenu</h3>
+                <p style="margin-top: 10px;">Fim definitivo do reaproveitamento de códigos legados. Implementação de
+                    trava sistêmica para parametrização de 2% de frete médio em todos os cálculos de margem.</p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-urgent">Estratégico</span> Desativação Unidade Bueno</h3>
+                <p style="margin-top: 10px;">Encerramento total das atividades na unidade Bueno. Transição de narrativa
+                    para "Ponto Vendido". Redirecionamento de tráfego via QR Codes físicos.</p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Qualidade</span> Implementação do "Princípio de Vô"</h3>
+                <p style="margin-top: 10px;">Protocolo de curadoria máxima. Itens de baixa qualidade vetados do mix.
+                    Garantia de upgrade para clientes em caso de falha de produto.</p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Expansão</span> Listas de Casamento Híbridas</h3>
+                <p style="margin-top: 10px;">Novo modelo competitivo iCasei/Westwing: Taxa de 3.5% para resgate em
+                    dinheiro ou 100% de crédito em produtos Goianita/Parceiros.</p>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Visão Geral do Plano de Ação</h2>
+            <div class="card">
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Configuração Olist</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Logística Desligamento Bueno</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%;"></div>
+                    </div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Assets Nova Marca (VIDI)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Pontos de Atenção (Safety)</h2>
+            <div class="card" style="border-left: 4px solid #ff5722;">
+                <p><strong>Risco de Morale:</strong> Gestão direta da diretoria necessária para o fechamento da unidade
+                    Bueno.</p>
+                <p style="margin-top: 10px;"><strong>Integração Tributária:</strong> Monitorar fluxos de NF-e no Olist
+                    entre filiais para evitar bitributação.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 Live Consultoria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

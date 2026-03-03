@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata Executiva - Cúpula CEO & VIDI Ecosystem</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            /* Azul Petróleo */
+            --card-bg: #0A243D;
+            /* Azul Escuro Cards */
+            --accent-color: #00e800;
+            /* Verde Vibrante */
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+        }
+
+        /* Util */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        strong {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background: rgba(6, 25, 42, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        header img {
+            height: 40px;
+            display: block;
+        }
+
+        main {
+            padding-top: 100px;
+            padding-bottom: 4rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        /* Badges & Tables */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 0.5rem;
+        }
+
+        .badge-success {
+            background: rgba(0, 232, 0, 0.15);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .badge-warning {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+            border: 1px solid #ffc107;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Visuals */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria Logo">
+        </div>
+    </header>
+
+    <main class="container fade-in">
+
+        <!-- Hero Section -->
+        <section style="text-align: center; margin-bottom: 3rem;">
+            <span class="badge badge-success">Ata Executiva</span>
+            <h1 style="margin-top: 1rem;">Cúpula CEO & Ecossistema VIDI</h1>
+            <p style="font-size: 1.2rem;">Deliberações Estratégicas e Planejamento - 19/02/2026</p>
+        </section>
+
+        <!-- Overview Card -->
+        <div class="card">
+            <h3>📊 Resumo Executivo</h3>
+            <p>Reunião de alinhamento estratégico para definição de <strong>Naming</strong>, estrutura do evento
+                principal e implementação de <strong>Governança via IA</strong>.</p>
+
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-value">VIDI</div>
+                    <div class="stat-label">Nova Marca Definida</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Cúpula</div>
+                    <div class="stat-label">Nome do Evento</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">R$ 500k</div>
+                    <div class="stat-label">Meta (Cenário Ousado)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hierarchy & Decisions -->
+        <div class="card">
+            <h3>🏛️ Governança e Decisões Chave</h3>
+            <p>Estruturação hierárquica e validação de estratégias fundamentais para o próximo ciclo.</p>
+
+            <div style="margin-top: 1.5rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">✅ Adoção do Sistema Operacional de IA
+                    </h4>
+                    <p>O time será pioneiro no uso de um SO de IA integrado. O <strong>ClickUp</strong> servirá como
+                        interface inicial de alimentação de dados. A IA assumirá progressivamente a operação.</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">✅ Naming da Empresa:
+                        <strong>VIDI</strong></h4>
+                    <p>Decisão unânime. Simbologia baseada em <em>"Veni, Vidi, Vici"</em> (Eu vi). Representa clareza,
+                        diagnóstico e visão estratégica.</p>
+                    <p style="font-size: 0.9rem;"><em>*Ação Imediata: Registro de domínios (vid.com.br, videdu) e
+                            variações.</em></p>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">✅ Naming do Evento: <strong>Cúpula
+                            CEO</strong></h4>
+                    <p>Slogan: "Chegue, Enxergue, Conquiste". Conexão com o Panteão (Roma) e a ideia de topo/liderança.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Structure -->
+        <div class="card">
+            <h3>📅 Estrutura do Evento</h3>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Data & Local</h4>
+                    <p><strong>Periodo:</strong> 26 a 29 de Maio</p>
+                    <p><strong>Locais em Análise:</strong> WTC (Favorito pela estrutura) vs Cavalo de Raça.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Formato (2 Dias)</h4>
+                    <ul style="list-style: none; color: var(--text-muted);">
+                        <li style="margin-bottom: 0.5rem;">🔹 <strong>Dia 1:</strong> Jantar VIP, Networking, Mesa
+                            Redonda.</li>
+                        <li>🔹 <strong>Dia 2:</strong> Conteúdo Denso e Palestrante Estrela.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Plan Table -->
+        <div class="card">
+            <h3>🚀 Plano de Ação (5W2H)</h3>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ação</th>
+                            <th>Responsável</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Registrar domínios "VIDI"</td>
+                            <td>Cléber / Sócio</td>
+                            <td><strong>IMEDIATO</strong></td>
+                            <td><span class="badge badge-warning">A Iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>Identidade Visual (VIDI + Cúpula)</td>
+                            <td>Sócio (c/ Fábio)</td>
+                            <td>20/02</td>
+                            <td><span class="badge badge-warning">Pendente</span></td>
+                        </tr>
+                        <tr>
+                            <td>Encomendar Brinde (Caneta)</td>
+                            <td>Luiz / Roberto</td>
+                            <td>20/02</td>
+                            <td><span class="badge badge-warning">Urgente</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cotação 2ª Diária WTC</td>
+                            <td>Sócio</td>
+                            <td>20/02</td>
+                            <td><span class="badge badge-warning">A Iniciar</span></td>
+                        </tr>
+                        <tr>
+                            <td>Iniciar uso do ClickUp (IA)</td>
+                            <td>Time Completo</td>
+                            <td>Imediato</td>
+                            <td><span class="badge badge-success">Em Andamento</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Live Consultoria. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Gerado por AIOS Core • Presentation Creator Agent</p>
+    </footer>
+
+    <script>
+        // Simple fade-in effect interactions if needed
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Presentation loaded successfully.');
+        });
+    </script>
+</body>
+
+</html>

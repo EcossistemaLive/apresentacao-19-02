@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Executivo - Reunião Casa Goianita - Live Consultoria</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --space-md: 2rem;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(6, 25, 42, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            height: 40px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 232, 0, 0.05) 0%, rgba(6, 25, 42, 0) 100%);
+        }
+
+        .hero h1 {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* KPI Panel */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .kpi-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-md);
+            margin-bottom: 2rem;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-color);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-decision {
+            background: rgba(0, 232, 0, 0.2);
+            color: var(--accent-color);
+        }
+
+        .badge-attention {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .badge-urgent {
+            background: rgba(255, 87, 34, 0.2);
+            color: #ff5722;
+        }
+
+        /* Progress Bars */
+        .progress-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                alt="Live Consultoria" class="logo">
+            <div class="date">Fevereiro de 2026</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="container">
+                <h1>Dashboard de Governança</h1>
+                <p>Ata de Alinhamento Comercial e Implementação E-commerce Casa Goianita. Deliberações sobre subsídio
+                    Olist, escopo Shop Temas e implantação de Lista de Presentes Huapps.</p>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-number">R$ 7k</span>
+                        <span class="kpi-label">Pagamento Único (Olist)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">20</span>
+                        <span class="kpi-label">Dias Úteis P/ Entrega</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">10h</span>
+                        <span class="kpi-label">Customização Garantida</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-number">01</span>
+                        <span class="kpi-label">Aprovação de Conselho</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Participantes e Stakeholders</h2>
+            <div class="card table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Empresa/Papel</th>
+                            <th>Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jader Andrade</td>
+                            <td>Olist / Shop Temas</td>
+                            <td>Sênior</td>
+                        </tr>
+                        <tr>
+                            <td>Junior Brandão</td>
+                            <td>Olist / Shop Temas</td>
+                            <td>Sênior</td>
+                        </tr>
+                        <tr>
+                            <td>Ecossistema Live</td>
+                            <td>Consultoria Casa Goianita</td>
+                            <td>Gestão Externa</td>
+                        </tr>
+                        <tr>
+                            <td>Débora</td>
+                            <td>Casa Goianita</td>
+                            <td>Tomada de Decisão</td>
+                        </tr>
+                        <tr>
+                            <td>Letícia</td>
+                            <td>Olist (Mencionada)</td>
+                            <td>Diretoria/Parcerias</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Deliberações Estratégicas</h2>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Acordo Subsídio</span> Financiamento do Projeto</h3>
+                <p style="margin-top: 10px;">Olist concedeu subsídio total, reduzindo o escopo de R$ 11.400,00 para um
+                    pagamento único de R$ 7.000,00, resolvendo internamente o repasse para a Shop Temas.</p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Escopo E-commerce</span> Entrega Shop Temas</h3>
+                <p style="margin-top: 10px;">Inclui escolha de template, 10h de customização, migração, configurações de
+                    pagamento/frete e personalização de emails institucionais, com prazo máximo de 20 dias úteis após
+                    início formal.</p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-urgent">Processo Interno</span> Exigências do Conselho Goianita</h3>
+                <p style="margin-top: 10px;">É mandatório compilar a justificativa detalhada, incluindo concorrência e
+                    custos, para garantir a lisura e aprovação transparente pelo Conselho decisório da Casa Goianita.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge badge-decision">Lista de Casamento</span> Implementação Huapps</h3>
+                <p style="margin-top: 10px;">Aprovação confirmada para a Huapps (Setup R$ 15.000 + Licença mensal R$
+                    79,90). Após crivo final do conselho, solicitaremos os contratos e o link de pagamento.</p>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Visão Geral do Plano de Ação</h2>
+            <div class="card">
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Aprovação do Conselho de Governança</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Contratação Olist/Shop Temas (Migração)</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%;"></div>
+                    </div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Implementação Huapps (Lista de Presentes)</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container fade-in">
+            <h2>Pontos de Atenção (Safety & Operations)</h2>
+            <div class="card" style="border-left: 4px solid #ff5722;">
+                <p><strong>Acompanhamento Rigoroso da Olist:</strong> O checklist de homologação e transição de
+                    front-end deve ser acompanhado de perto pela Ecossistema Live para diminuir margem de erro.</p>
+                <p style="margin-top: 10px;"><strong>Sensibilidade Comercial:</strong> Garantir que os players de
+                    tecnologia compreendam a rigidez institucional da Casa Goianita nos fluxos de venda/comunicação
+                    automatizada.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 Ecossistema Live Consultoria. Documento confidencial e estratégico.
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

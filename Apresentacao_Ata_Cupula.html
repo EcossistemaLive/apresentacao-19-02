@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata Digital: Projeto Cúpula — 25/02/2026</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --live-deep: #06192a;
+            --live-glass: rgba(10, 36, 61, 0.70);
+            --live-accent: #00e800;
+            --live-accent-dim: rgba(0, 232, 0, 0.15);
+            --text-main: #e2e8f0;
+            --text-light: #ffffff;
+            --text-dim: #94a3b8;
+            --font-body: 'Poppins', sans-serif;
+            --font-display: 'Merriweather', serif;
+            --ease-fluid: cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--live-deep);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, var(--live-accent-dim) 0%, transparent 70%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .badge {
+            background: var(--live-accent);
+            color: var(--live-deep);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .subtitle {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-dim);
+        }
+
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-fluid);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--live-accent);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--live-glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--live-accent);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .decision-badge {
+            display: inline-block;
+            background: rgba(0, 232, 0, 0.1);
+            color: var(--live-accent);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th {
+            background: rgba(0, 232, 0, 0.05);
+            color: var(--live-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--live-accent);
+            margin-right: 8px;
+        }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .safety {
+            border-left: 4px solid #f87171;
+            padding-left: 2rem;
+            background: rgba(248, 113, 113, 0.05);
+            padding: 2rem;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .safety h3 {
+            color: #f87171;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <span class="badge">Ata de Conselho | Secretary @secretary</span>
+            <h1>ATA PROJETO CÚPULA</h1>
+            <p class="subtitle">Análise de Governança e Decisões Executivas — 25 de Fevereiro, 2026</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>01. Hierarquia e Presença</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Luiz Portal</h3>
+                    <p>Estrategista Executivo / Sócio (Nível 1)</p>
+                </div>
+                <div class="card">
+                    <h3>Ana Dias</h3>
+                    <p>Gestora de Adm & Financeiro (Nível 2)</p>
+                </div>
+                <div class="card">
+                    <h3>Cléber</h3>
+                    <p>Gestor de Tech & Governança (Nível 2)</p>
+                </div>
+                <div class="card">
+                    <h3>João Victor</h3>
+                    <p>Gestor de Logística & Eventos (Nível 3)</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>02. Pautas Centrais</h2>
+            <div class="card" style="width: 100%;">
+                <p>• Reajuste de cronograma para lançamento do evento Cúpula.<br>
+                    • Curadoria estratégica de palestrantes (Manuele Lousa / Boticário).<br>
+                    • Posicionamento High Ticket e exclusão de produtos de entrada.<br>
+                    • Resolução de travas operacionais (Bancário e INPI).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>03. Decisões Oficiais</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="decision-badge">Confirmado</span>
+                    <h3>Nova Data: 24.SET.2026</h3>
+                    <p>Adiado para permitir 4 meses de tráfego qualificado para público de alta renda.</p>
+                </div>
+                <div class="card">
+                    <span class="decision-badge">Aprovado</span>
+                    <h3>Curadoria Master</h3>
+                    <p>Foco total em Emmanuele Louza (Flamboyant). Atração via prestígio e Media Training Vox.</p>
+                </div>
+                <div class="card">
+                    <span class="decision-badge">Estratégico</span>
+                    <h3>High Ticket Only</h3>
+                    <p>Interrupção de produtos de baixo valor para proteger a imagem de autoridade da marca.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>04. Plano de Ação (5W2H)</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>O que (Ação)</th>
+                            <th>Responsável</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Validação de Nome INPI</td>
+                            <td>Luiz Portal</td>
+                            <td>Imediato</td>
+                            <td><span class="status-dot"></span>Em andamento</td>
+                        </tr>
+                        <tr>
+                            <td>Mapeamento ClickUp</td>
+                            <td>Cléber / Ana Dias</td>
+                            <td>10/03</td>
+                            <td><span class="status-dot" style="background: #94a3b8;"></span>A iniciar</td>
+                        </tr>
+                        <tr>
+                            <td>Conta Banco Físico</td>
+                            <td>Ana Dias / Camila</td>
+                            <td>Imediato</td>
+                            <td><span class="status-dot"></span>Em andamento</td>
+                        </tr>
+                        <tr>
+                            <td>Gravação Storymaking</td>
+                            <td>Luiz / João Victor</td>
+                            <td>Diário</td>
+                            <td><span class="status-dot" style="background: #3b82f6;"></span>Iniciado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="safety">
+                <h3>⚠️ Pontos de Atenção (Safety)</h3>
+                <p><strong>Risco INPI:</strong> A incerteza do nome pode gerar retrabalho estratégico grave.<br>
+                    <strong>Trava Bancária:</strong> Pendências no C6 Bank ameaçam o fluxo de pagamentos se não
+                    resolvidas em banco físico.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 LIVE CONSULTORIA — GERADO POR AIOS ANTIGRAVITY</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

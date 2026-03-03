@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: 'Times New Roman', serif; font-size: 12pt; line-height: 1.5; margin: 2cm; }
+  h1 { font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 24pt; }
+  h2 { font-size: 14pt; font-weight: bold; margin-top: 18pt; border-bottom: 1px solid #000; padding-bottom: 6pt; }
+  h3 { font-size: 13pt; font-weight: bold; margin-top: 12pt; }
+  p { margin-bottom: 12pt; text-align: justify; }
+  ul { list-style-type: disc; margin-bottom: 12pt; }
+  li { margin-bottom: 6pt; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12pt; }
+  th, td { border: 1px solid #000; padding: 6pt; text-align: left; }
+  th { background-color: #f2f2f2; font-weight: bold; }
+  .header-info { text-align: center; margin-bottom: 36pt; font-style: italic; }
+  .new-clause { background-color: #f9f9f9; border-left: 3px solid #000; padding-left: 10pt; }
+</style>
+</head>
+<body>
+
+<div class="header-info">
+    <p><strong>GRUPO GOIANITA (73 ANOS)</strong></p>
+    <p>Versão: 2026.02 (Rev. Benchmarking) | Status: Documento Confidencial e Normativo</p>
+</div>
+
+<h1>MASTER BOOK: POLÍTICA COMERCIAL E OPERACIONAL</h1>
+
+<h2>TÍTULO I: GOVERNANÇA CORPORATIVA E ESTRATÉGIA</h2>
+
+<h3>1. Estrutura de Poder e Decisão</h3>
+<p>Para garantir que a tradição converse com a inovação, a hierarquia de decisão é absoluta:</p>
+<ul>
+    <li><strong>Comitê Gestor (C-Level):</strong> Único órgão com poder para alterar a Margem de Contribuição Global e aprovar investimentos de Capex (Reformas/Expansão).</li>
+    <li><strong>Curadoria de Produto:</strong> Detém o Poder de Veto sobre a compra de qualquer item que fira a estética ou o padrão de qualidade da marca, independentemente do preço.</li>
+    <li><strong>Gerência de Loja:</strong> Guardiã da execução. Possui autonomia para resolver conflitos de até <strong>R$ 2.000,00</strong> sem acionar a diretoria, visando a satisfação imediata do cliente.</li>
+    <li><strong>Comprador (Buyer):</strong>
+        <ul>
+            <li><strong>Função:</strong> Negociador técnico. Responsável por buscar as melhores condições comerciais (prazo/preço) para os produtos definidos pela Curadoria.</li>
+            <li><strong>Limites:</strong> Não tem autonomia para introduzir novas categorias de produtos sem aval da Curadoria.</li>
+            <li><strong>Meta:</strong> Garantir "Ruptura Zero" nos itens de Curva A e margem média de entrada superior a [X]%.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>2. Ética e Compliance com Fornecedores</h3>
+<ul>
+    <li><strong>Código de Conduta de Compras:</strong> É estritamente proibido aos compradores aceitar presentes, viagens ou benefícios pessoais de fornecedores que excedam o valor simbólico de <strong>R$ 100,00</strong>.</li>
+    <li><strong>Homologação:</strong> Todo novo fornecedor deve assinar o "Termo de Conformidade Goianita", garantindo que não utiliza trabalho escravo, infantil ou madeira ilegal (para linha de móveis/tábuas).</li>
+    <li><strong>Bonificações (Enxoval):</strong> Produtos enviados pela indústria como "bonificação" devem obrigatoriamente dar entrada no estoque com custo zero. É proibida a apropriação desses itens por funcionários.</li>
+</ul>
+
+<h2>TÍTULO II: CANAIS DE VENDA E OMNICHANNEL (O "ESTOQUE ÚNICO")</h2>
+
+<h3>1. Integração Total (Olist)</h3>
+<p>A regra é: <em>"A Loja é o Estoque, o Site é a Vitrine"</em>.</p>
+<ul>
+    <li><strong>Prateleira Infinita:</strong> É dever do vendedor ofertar o item pelo tablet se ele não estiver disponível na prateleira física, mas constar no estoque do CD ou outra filial.</li>
+    <li><strong>Click & Collect (Retirada):</strong> O cliente que compra online e retira na loja é um cliente "Premium". O pacote deve ser entregue em sacola de presente, e o gerente deve ser notificado para tentar um <em>upsell</em> (venda adicional) no momento da retirada.</li>
+</ul>
+
+<div class="new-clause">
+<h3>2. Política de Armazenagem e "Hold" (Mercadoria não Retirada)</h3>
+<p>Para garantir a rotatividade do estoque e evitar custos de ocupação indevidos:</p>
+<ul>
+    <li><strong>Prazo de Retirada:</strong> O cliente tem até <strong>30 dias corridos</strong> para retirar produtos comprados na modalidade "Retira Loja" ou "Hold".</li>
+    <li><strong>Taxa de Armazenagem:</strong> Após o 31º dia, incidirá uma taxa de armazenagem de <strong>0.5% ao dia</strong> sobre o valor da nota fiscal.</li>
+    <li><strong>Abandono:</strong> Decorridos 90 dias sem retirada e sem contato, a mercadoria retornará ao estoque de venda. O valor pago será convertido em carta de crédito ao cliente, descontadas as taxas administrativas e de armazenagem (limitadas a 20% do valor do bem).</li>
+</ul>
+</div>
+
+<h3>3. Segmentação de Clientes (Tabelas de Preço)</h3>
+<ul>
+    <li><strong>Varejo (B2C):</strong> Preço Cheio. Foco em experiência.</li>
+    <li><strong>Goianita PRO (B2B):</strong>
+        <ul>
+            <li><em>Hotéis/Restaurantes:</em> Tabela regressiva por volume. Faturamento no boleto permitido apenas após 3 compras à vista e aprovação de crédito (Serasa Limpo + 3 Referências Comerciais).</li>
+        </ul>
+    </li>
+    <li><strong>Prescritores (Arquitetos/Decoradores):</strong>
+        <ul>
+            <li><em>Reserva Técnica (RT):</em> 5% a 7% de comissão paga mediante Nota Fiscal de Serviço do profissional. É proibido o pagamento "por fora".</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>TÍTULO III: OPERAÇÃO DE LOJA E VISUAL MERCHANDISING (VM)</h2>
+
+<h3>1. Padrão Visual e Atmosfera</h3>
+<p>A loja vende sonhos, não apenas pratos.</p>
+<ul>
+    <li><strong>Regra dos 5 Sentidos:</strong>
+        <ul>
+            <li><em>Visão:</em> Vitrines trocadas a cada 15 dias. Iluminação focada nos itens de luxo (pontos quentes).</li>
+            <li><em>Olfato:</em> A loja deve ter a "Assinatura Olfativa Goianita" (difusor padrão ligado das 09h às 19h).</li>
+            <li><em>Audição:</em> Playlist aprovada pelo Marketing. Proibido rádio comercial ou música estridente.</li>
+        </ul>
+    </li>
+    <li><strong>Mesa Posta:</strong> Obrigatório ter, no mínimo, 2 mesas completas montadas na entrada da loja, trocadas semanalmente (tema: Café da Manhã, Jantar Romântico, Almoço de Domingo).</li>
+</ul>
+
+<h3>2. Prevenção de Perdas e Estoque</h3>
+<ul>
+    <li><strong>Auditoria de Vidros:</strong> A conferência de itens frágeis (taças, cristais) é feita na frente do cliente no ato da venda. O cliente assina o cupom dando aceite na integridade.
+    <li><strong>Inventário Rotativo:</strong> O estoquista deve bipar 10% do estoque (uma categoria por dia) via App Olist.
+    <li><strong>Política de Quebra Interna:</strong> O colaborador que quebrar um item por negligência comprovada (brincadeiras, manuseio incorreto) arcará com 50% do valor de custo. Quebras acidentais entram na conta de "Perdas Operacionais" da loja.
+</ul>
+
+<h2>TÍTULO IV: POLÍTICA COMERCIAL E FINANCEIRA</h2>
+
+<h3>1. Matriz de Descontos e Alçadas</h3>
+<p>O desconto não é direito, é ferramenta de fechamento.</p>
+<ul>
+    <li><strong>Vendedor:</strong> 0% (Usa apenas parcelamento).</li>
+    <li><strong>Gerente:</strong> Até 5% (Para salvar a venda).</li>
+    <li><strong>Diretoria:</strong> Acima de 5% (Apenas para grandes volumes B2B ou queima de estoque).</li>
+</ul>
+
+<h3>2. Regra de "Desconto Ponderado" (Cesta Mista)</h3>
+<p>Para permitir descontos maiores sem ferir a margem, o Gerente pode aplicar até <strong>10%</strong> em um item específico, DESDE QUE o desconto total na cesta do cliente não ultrapasse <strong>5%</strong>.</p>
+
+<h3>3. Comissionamento Estratégico</h3>
+<p>Proteção da Margem Líquida.</p>
+<ul>
+    <li><strong>Venda no PIX/Débito:</strong> Comissão Ouro (3.5%).</li>
+    <li><strong>Venda Parcelada (até 6x):</strong> Comissão Prata (2.5%).</li>
+    <li><strong>Venda Parcelada Longa (10x+):</strong> Comissão Bronze (1.5%).</li>
+</ul>
+
+<h2>TÍTULO V: ECOSSISTEMA DE SERVIÇOS E PARCERIAS</h2>
+
+<h3>1. Lista de Casamento "Lifestyle"</h3>
+<p>A Goianita opera como um banco digital para os noivos.</p>
+<ul>
+    <li><strong>Créditos:</strong> O casal recebe 100% em créditos. Não há entrega física obrigatória.</li>
+    <li><strong>Bônus de Meta:</strong> Listas que ultrapassarem <strong>R$ 5.000,00</strong> em presentes convertidos receberão um bônus extra de <strong>3%</strong> em créditos.</li>
+    <li><strong>Marketplace de Serviços:</strong> A venda de Lua de Mel ou Dia da Noiva via lista gera uma receita de Taxa de Conveniência (15%) para a Goianita.</li>
+</ul>
+
+<div class="new-clause">
+<h3>2. Política de Montagem e Assistência</h3>
+<ul>
+    <li><strong>Serviço de Montagem:</strong> A Goianita <strong>não realiza</strong> montagem de móveis diretamente.</li>
+    <li><strong>Indicação:</strong> Fornecemos uma lista de montadores parceiros homologados. O pagamento do serviço é tratado diretamente entre cliente e montador.</li>
+    <li><strong>Garantia de Móveis:</strong> 90 dias legais + 90 dias contratuais (Total 6 meses) contra defeitos de fabricação (estrutura/pintura).</li>
+</ul>
+</div>
+
+<h2>TÍTULO VI: GESTÃO DE PESSOAS E COMPLIANCE</h2>
+
+<h3>1. Dress Code e Apresentação Pessoal</h3>
+<p>O vendedor Goianita é um consultor de luxo. A imagem pessoal é parte do produto.</p>
+<ul>
+    <li><strong>Uniforme:</strong> Obrigatório, limpo e passado.</li>
+    <li><strong>Calçados:</strong> Fechados, cor neutra (preto/nude), limpos.</li>
+    <li><strong>Maquiagem/Unhas:</strong> Suave e profissional. Unhas limpas e cuidadas.</li>
+</ul>
+
+<h3>2. Protocolo de Atendimento e Devoluções (SAC)</h3>
+<ul>
+    <li><strong>Trocas:</strong> Aceitas em até 30 dias para itens de linha (intactos).</li>
+    <li><strong>Restrição Sanitária:</strong> Por questões de higiene, <strong>não aceitamos</strong> troca ou devolução de roupas de cama, mesa e banho cuja embalagem original tenha sido aberta.</li>
+    <li><strong>Escalada de Reclamação:</strong> Vendedor -> Gerente -> Ouvidoria.</li>
+</ul>
+
+<h2>TÍTULO VII: PROCEDIMENTOS OPERACIONAIS PADRÃO (SOPs)</h2>
+
+<p><em>(Checklists de Abertura, Fechamento e Recebimento conforme detalhado no Anexo Operacional).</em></p>
+
+<hr>
+
+<p><em>Esta política revoga todas as disposições anteriores e entra em vigor em 01/02/2026.</em></p>
+
+</body>
+</html>

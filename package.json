@@ -1,0 +1,45 @@
+{
+  "name": "gestor-de-projeto",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "bot": "taskkill /F /IM node.exe & node .aios-core/scripts/telegram-bot.js",
+    "typebot": "node .aios-core/scripts/typebot-api.js",
+    "sync:ide": "node .aios-core/infrastructure/scripts/ide-sync/index.js sync",
+    "sync:ide:antigravity": "node .aios-core/infrastructure/scripts/ide-sync/index.js sync --ide antigravity",
+    "sync:ide:cursor": "node .aios-core/infrastructure/scripts/ide-sync/index.js sync --ide cursor",
+    "sync:ide:gemini": "node .aios-core/infrastructure/scripts/ide-sync/index.js sync --ide gemini",
+    "sync:ide:codex": "node .aios-core/infrastructure/scripts/ide-sync/index.js sync --ide codex",
+    "sync:ide:validate": "node .aios-core/infrastructure/scripts/ide-sync/index.js validate",
+    "sync": "node .aios-core/scripts/sync.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "googleapis": "^171.4.0",
+    "next": "16.1.6",
+    "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^0.67.0",
+    "pdf-parse": "^2.4.5",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "squads": "^0.2.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
