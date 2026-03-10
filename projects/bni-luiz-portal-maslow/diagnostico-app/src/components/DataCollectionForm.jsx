@@ -22,18 +22,18 @@ const DataCollectionForm = ({ onSubmit, isSaving }) => {
     };
 
     return (
-        <div className="bg-slate-800/80 backdrop-blur-md p-6 sm:p-10 rounded-2xl border border-slate-700/50 shadow-2xl relative overflow-hidden fade-in">
+        <div className="bg-slate-800/80 backdrop-blur-md p-5 sm:p-10 rounded-2xl border border-slate-700/50 shadow-2xl relative overflow-hidden fade-in">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
 
             <div className="max-w-md mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold text-white mb-2">Quase lá!</h2>
-                    <p className="text-slate-400">
+                <div className="text-center mb-6 md:mb-8">
+                    <h2 className="text-xl md:text-2xl font-bold text-white mb-2">Quase lá!</h2>
+                    <p className="text-slate-400 text-sm md:text-base">
                         Para ver o resultado detalhado do diagnóstico do seu time, por favor informe seus dados abaixo.
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div>
                         <label htmlFor="nome" className="block text-sm font-medium text-slate-300 mb-2">
                             Nome completo

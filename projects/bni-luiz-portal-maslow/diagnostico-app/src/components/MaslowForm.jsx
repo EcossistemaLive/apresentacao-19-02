@@ -67,25 +67,25 @@ export default function MaslowForm({ onComplete }) {
             </div>
 
             <div key={currentIndex} className="animate-fade-in-up">
-                <div className="min-h-[120px] mb-8">
-                    <h2 className="text-2xl md:text-3xl font-medium text-white leading-snug">
+                <div className="min-h-[100px] md:min-h-[120px] mb-4 md:mb-8">
+                    <h2 className="text-xl md:text-3xl font-medium text-white leading-snug">
                         {currentQ.questionText}
                     </h2>
                 </div>
 
-                <div className="space-y-3 mb-12">
+                <div className="space-y-2 md:space-y-3 mb-8 md:mb-12">
                     {likertOptions.map((option) => {
                         const selected = answers[currentQ.globalIndex]?.value === option.value;
                         return (
                             <button
                                 key={option.value}
                                 onClick={() => handleSelect(option.value)}
-                                className={`w-full text-left px-6 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between ${selected
+                                className={`w-full text-left px-5 md:px-6 py-3 md:py-4 rounded-xl border transition-all duration-300 flex items-center justify-between ${selected
                                     ? 'bg-green-600/20 border-green-500 shadow-[0_0_20px_rgba(0,232,0,0.15)] ring-1 ring-green-500/50'
                                     : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
                                     }`}
                             >
-                                <span className="text-lg text-slate-100">{option.label}</span>
+                                <span className="text-base md:text-lg text-slate-100">{option.label}</span>
                                 <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${selected ? 'border-green-400' : 'border-slate-500 shadow-inner bg-black/20'}`}>
                                     {selected && <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />}
                                 </div>

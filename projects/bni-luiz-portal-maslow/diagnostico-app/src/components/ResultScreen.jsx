@@ -48,18 +48,18 @@ export default function ResultScreen({ answers, onRestart }) {
                 <p className="text-slate-300 text-lg">Confira em qual estágio sua equipe se encontra predominantemente</p>
             </div>
 
-            <div className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-green-900/30 to-emerald-900/10 border border-green-500/30 relative overflow-hidden backdrop-blur-sm shadow-xl">
-                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-green-400 to-emerald-500"></div>
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-4">
+            <div className="mb-8 md:mb-12 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-green-900/30 to-emerald-900/10 border border-green-500/30 relative overflow-hidden backdrop-blur-sm shadow-xl">
+                <div className="absolute top-0 left-0 w-1.5 md:w-2 h-full bg-gradient-to-b from-green-400 to-emerald-500"></div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-4">
                     <div>
-                        <h3 className="text-lg text-green-200/80 mb-1 font-medium tracking-wide uppercase">Estágio Dominante</h3>
-                        <h4 className="text-2xl md:text-4xl font-bold text-white text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white">{dominantStage.name}</h4>
+                        <h3 className="text-xs md:text-lg text-green-200/80 mb-1 font-medium tracking-wide uppercase">Estágio Dominante</h3>
+                        <h4 className="text-xl md:text-4xl font-bold text-white text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white">{dominantStage.name}</h4>
                     </div>
-                    <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-bl from-green-400 to-emerald-300">
+                    <div className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-bl from-green-400 to-emerald-300">
                         {dominantStage.percentage.toFixed(0)}%
                     </div>
                 </div>
-                <p className="text-lg md:text-xl text-slate-200 leading-relaxed border-t border-white/10 pt-6 mt-2">
+                <p className="text-base md:text-xl text-slate-200 leading-relaxed border-t border-white/10 pt-4 md:pt-6 mt-2">
                     {getAnalysisText(dominantStage.originalIndex)}
                 </p>
             </div>
@@ -71,7 +71,7 @@ export default function ResultScreen({ answers, onRestart }) {
                 </h3>
                 {stageScores.map((stage) => (
                     <div key={stage.name} className="relative group">
-                        <div className="flex justify-between text-sm mb-2">
+                        <div className="flex justify-between text-xs sm:text-sm mb-1 sm:mb-2">
                             <span className={`font-medium transition-colors ${stage.name === dominantStage.name ? 'text-green-300' : 'text-slate-300'}`}>
                                 {stage.name}
                             </span>
@@ -79,7 +79,7 @@ export default function ResultScreen({ answers, onRestart }) {
                                 {stage.percentage.toFixed(0)}%
                             </span>
                         </div>
-                        <div className="w-full h-4 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                        <div className="w-full h-2.5 sm:h-4 bg-white/5 rounded-full overflow-hidden border border-white/5">
                             <div
                                 className={`h-full rounded-full transition-all duration-1000 ease-out ${stage.name === dominantStage.name
                                     ? 'bg-gradient-to-r from-green-400 to-emerald-500 shadow-[0_0_10px_rgba(0,232,0,0.5)]'
